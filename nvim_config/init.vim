@@ -37,10 +37,6 @@ source ~/.config/nvim/plugins/tagbar.vim
 source ~/.config/nvim/plugins/telescope.vim
 source ~/.config/nvim/plugins/ultisnips.vim
 
-augroup fmt
-  autocmd!
-  autocmd BufWritePre * undojoin | Neoformat
-augroup END
 
 " +-----------------------------------------------------+ "
 " |                   END OF CONFIGS                    |
