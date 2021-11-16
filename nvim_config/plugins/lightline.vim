@@ -7,5 +7,5 @@ let g:lightline = {
       \   'gitbranch': 'gitbranch#name',
       \   'CurrentFunction': 'gitbranch#name'
       \ },
-      \ 'colorscheme': 'gruvbox',
+      \ 'colorscheme': 'ayu',
       \ }

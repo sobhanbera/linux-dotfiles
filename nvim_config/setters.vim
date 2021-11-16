@@ -1,4 +1,6 @@
-" setters...
+" +-----------------------------------------------------+ "
+" |                        SETTERS                      |
+" +-----------------------------------------------------+ "
 set encoding=UTF-8
 set exrc
 set noerrorbells
@@ -14,7 +16,7 @@ set incsearch nohlsearch
 set hidden
 set history=10000
 set termguicolors
-set scrolloff=3
+set scrolloff=5
 set completeopt=menuone,noinsert,noselect
 set colorcolumn=130 signcolumn=yes
 set cmdheight=1

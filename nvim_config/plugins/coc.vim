@@ -2,7 +2,7 @@
 " |                    DEFAULT CONFIGS                  |
 " +-----------------------------------------------------+ "
 
-inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
+" inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 
 " Use <c-space> to trigger completion.
 " if has('nvim')
@@ -26,3 +26,4 @@ inoremap <expr> <Tab> pumvisible() ? coc#_select_confirm() : "<Tab>"
 "FOR VIM-PRETTIER
 autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.html,*.css CocCommand prettier.formatFile
 
+" nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>

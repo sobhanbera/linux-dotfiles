@@ -9,7 +9,5 @@ let g:NERDTreeDirArrowExpandable = '▸'
 let g:NERDTreeDirArrowCollapsible = '▾'
 nnoremap <C-n> :NERDTreeToggle<CR>
 
-nnoremap <C-l> :call CocActionAsync('jumpDefinition')<CR>
-
 "NERDTREE AND STARTIFY...
 let g:startify_bookmarks = systemlist("cut -sd' ' -f 2- ~/.NERDTreeBookmarks")

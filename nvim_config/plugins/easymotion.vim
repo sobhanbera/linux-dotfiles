@@ -1,6 +1,6 @@
 " Gif config
-map  / <Plug>(easymotion-sn)
-omap / <Plug>(easymotion-tn)
+" map  / <Plug>(easymotion-sn) " don't ever override search command
+" omap / <Plug>(easymotion-tn) " don't ever override search command
 
 " These `n` & `N` mappings are options. You do not have to map `n` & `N` to EasyMotion.
 " Without these mappings, `n` & `N` works fine. (These mappings just provide
