@@ -2,10 +2,10 @@ snippet rnfc "React Native Functional Component" b
 import React from 'react';
 import {View, StyleSheet, Text} from 'react-native';
 
-const ${1:Component} = (${2:props}) => {
+const ${1:Component} = (${3:props}) => {
 	return (
 		${0:<View>
-			<Text>${1:Component} Component</Text>
+			<Text>${2:Component} Component</Text>
 		</View>}
 	);
 }
@@ -23,14 +23,14 @@ endsnippet
 snippet rfc "React Native Functional Component" b
 import React from 'react';
 
-const ${1:Component} = (${2:props}) => {
+const ${1:Component} = (${3:props}) => {
 	return (
 		${0:<div>
 		</div>}
 	);
 }
 
-export default ${1:Component};
+export default ${2:Component};
 
 endsnippet
 

@@ -20,7 +20,7 @@ source ~/.config/nvim/plugins/closetag.vim
 " source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/commentary.vim
 source ~/.config/nvim/plugins/context.vim
-source ~/.config/nvim/plugins/easymotion.vim
+" source ~/.config/nvim/plugins/easymotion.vim
 source ~/.config/nvim/plugins/firenvim.vim
 source ~/.config/nvim/plugins/fugitive.vim
 source ~/.config/nvim/plugins/fzf.vim
@@ -37,7 +37,7 @@ source ~/.config/nvim/plugins/rainbow.vim
 source ~/.config/nvim/plugins/startify.vim
 source ~/.config/nvim/plugins/tagbar.vim
 source ~/.config/nvim/plugins/telescope.vim
-source ~/.config/nvim/plugins/trouble.vim
+" source ~/.config/nvim/plugins/trouble.vim
 source ~/.config/nvim/plugins/ultisnips.vim
 source ~/.config/nvim/plugins/vimspector.vim
 
@@ -45,4 +45,3 @@ source ~/.config/nvim/plugins/vimspector.vim
 " +-----------------------------------------------------+ "
 " |                   END OF CONFIGS                    |
 " +-----------------------------------------------------+ "
-

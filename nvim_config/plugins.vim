@@ -15,7 +15,7 @@ Plug 'https://github.com/nvim-lua/plenary.nvim' " Lua module for asynchronous pr
 Plug 'https://github.com/nvim-telescope/telescope.nvim' " highly extendable fuzzy finder
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " awesome syntax
 Plug 'https://github.com/ray-x/lsp_signature.nvim' " mainly for function signatures
-Plug 'https://github.com/folke/trouble.nvim' " colored virtual text of LSP with this plugin...
+" Plug 'https://github.com/folke/trouble.nvim' " colored virtual text of LSP with this plugin...
 
 
 
@@ -42,9 +42,11 @@ Plug 'https://github.com/github/copilot.vim' " The Github Copilot
 " +-----------------------------------------------------+ "
 " |                    UI COMPONENTS                    |
 " +-----------------------------------------------------+ "
-Plug 'https://github.com/romgrk/barbar.nvim' " tabview in nvim
+" Plug 'https://github.com/romgrk/barbar.nvim' " tabview in nvim commented bcz may be causing lags or everytime opens file in new tab buffer
 Plug 'https://github.com/itchyny/lightline.vim' " vim bottom bar
 Plug 'https://github.com/scrooloose/nerdtree' " file system
+Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin' " git plugin for nerdtree nvim
+" Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight' " NERD TREE better highligher 
 Plug 'https://github.com/kassio/neoterm' " terminal for vim
 Plug 'https://github.com/kyazdani42/nvim-web-devicons' " required for tab plugin
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons seperate
@@ -67,7 +69,8 @@ Plug 'https://github.com/cocopon/iceberg.vim' " iceberg colorscheme
 " +-----------------------------------------------------+ "
 Plug 'https://github.com/ap/vim-css-color' " css colors
 Plug 'https://github.com/lilydjwg/colorizer' " highlight where every color hash or code is found in the entire codebase or files
-Plug 'https://github.com/frazrepo/vim-rainbow' " rainbow brackets
+Plug 'https://github.com/frazrepo/vim-rainbow' " new rainbow brackets
+" Plug 'https://github.com/kien/rainbow_parentheses.vim' " old rainbow brackets
 Plug 'https://github.com/leafgarland/typescript-vim' " typescript for vim
 Plug 'https://github.com/peitalin/vim-jsx-typescript' " jsx + ts
 Plug 'https://github.com/lifepillar/pgsql.vim' " sql syntax
@@ -106,7 +109,7 @@ Plug 'https://github.com/chun-yang/auto-pairs' " auto complete the pair of brack
 Plug 'https://github.com/alvan/vim-closetag' " close tags
 Plug 'https://github.com/mattesgroeger/vim-bookmarks'
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
-
+" Plug 'https://github.com/easymotion/vim-easymotion' " n and N was not working add this or remove the easymotion.vim plugin file
 
 
 " +-----------------------------------------------------+ "

@@ -5,8 +5,14 @@ let mapleader=" "
 nnoremap <leader>s :source $MYVIMRC<CR> " s triggers sourcing of vimrc
 nnoremap <leader>e :e $MYVIMRC<CR> " opens vim config file
 nnoremap <leader>z <Esc>:w<CR> " save the file
-nnoremap <leader>q :q<CR> " quit nvim/vim
+nnoremap <leader>q :q<CR> " clear the current buffer nvim/vim
+
+" toggle or switch between tabs
+nnoremap <F2> :bprevious<CR>
+nnoremap <F3> :bnext<CR>
+
 nnoremap <leader>vs <Esc>:vs<CR> " split window vertical
+nnoremap <leader>hs <Esc>:hs<CR> " split window vertical
 
 nnoremap <leader>bN :bprevious<CR> " go to previous buffer
 nnoremap <leader>bn :bnext<CR> " goto next buffer
