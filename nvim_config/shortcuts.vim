@@ -20,21 +20,21 @@ nnoremap <leader>bd :bd<CR> " delete the currentl buffer
 
 nnoremap <F5> :terminal <CR> " open terminal in vim
 
-" nmap <silent> <C-s> <Esc>:w<CR> " default universal save shortcut
-" nmap <silent> <C-z> <Esc>:w<CR> " default universal save shortcut
+" nnoremap <silent> <C-s> <Esc>:w<CR> " default universal save shortcut
+" nnoremap <silent> <C-z> <Esc>:w<CR> " default universal save shortcut
 
 " vertical navigation macros
-nmap <silent> 1j 5j
-nmap <silent> 2j 10j
-nmap <silent> 3j 15j
-nmap <silent> 4j 20j
-nmap <silent> 5j 25j
+" nnoremap 1j 5j
+" nnoremap 2j 10j
+" nnoremap 3j 15j
+" nnoremap 4j 20j
+" nnoremap 5j 25j
 
-nmap <silent> 1k 5k
-nmap <silent> 2k 10k
-nmap <silent> 3k 15k
-nmap <silent> 4k 20k
-nmap <silent> 5k 25k
+" nnoremap 1k 5k
+" nnoremap 2k 10k
+" nnoremap 3k 15k
+" nnoremap 4k 20k
+" nnoremap 5k 25k
 
 " imp tab editing configs...
 nnoremap <C-t> :tabnew<CR>
@@ -48,8 +48,8 @@ nnoremap <leader>t :tabnext<CR>
 
 " Copy to clipboard
 vnoremap  <leader>y  "+y
-nnoremap  <leader>Y  "+yg_
 nnoremap  <leader>y  "+y
+nnoremap  <leader>Y  "+yg_
 nnoremap  <leader>yy  "+yy
 
 " Paste from clipboard

@@ -37,6 +37,7 @@ source ~/.config/nvim/plugins/rainbow.vim
 source ~/.config/nvim/plugins/startify.vim
 source ~/.config/nvim/plugins/tagbar.vim
 source ~/.config/nvim/plugins/telescope.vim
+source ~/.config/nvim/plugins/treesitter.vim
 " source ~/.config/nvim/plugins/trouble.vim
 source ~/.config/nvim/plugins/ultisnips.vim
 source ~/.config/nvim/plugins/vimspector.vim
@@ -45,3 +46,4 @@ source ~/.config/nvim/plugins/vimspector.vim
 " +-----------------------------------------------------+ "
 " |                   END OF CONFIGS                    |
 " +-----------------------------------------------------+ "
+

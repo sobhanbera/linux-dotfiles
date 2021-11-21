@@ -3,8 +3,6 @@
 " |                       GRUVBOX                       |
 " +-----------------------------------------------------+ "
 let g:gruvbox_contrast_dark='hard' " marking the interface hard dark
-highlight ColorColumn ctermbg=0 guibg=#3C3835  " highlight the column number
-highlight OverLength ctermbg=NONE ctermfg=NONE guibg=#000000 guifg=#ADFF2F " highlight the line that is too long
 
 
 
@@ -25,3 +23,5 @@ colorscheme ayu " calling this after because by default the above line does not 
 
 hi Normal guibg=NONE
 hi CursorLine gui=NONE cterm=NONE
+" highlight ColorColumn ctermbg=0 guibg=#3C3835  " highlight the column number
+highlight OverLength ctermbg=NONE ctermfg=NONE guibg=#000000 guifg=#ADFF2F " highlight the line that is too long
