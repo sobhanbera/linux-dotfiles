@@ -16,6 +16,7 @@ Plug 'https://github.com/nvim-telescope/telescope.nvim' " highly extendable fuzz
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " awesome syntax
 Plug 'https://github.com/ray-x/lsp_signature.nvim' " mainly for function signatures
 " Plug 'https://github.com/folke/trouble.nvim' " colored virtual text of LSP with this plugin...
+Plug 'https://github.com/craigemery/vim-autotag' " ctags package must be installed in the system. this plugin is used to jump to definitions
 
 
 

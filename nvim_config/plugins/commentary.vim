@@ -1,3 +1,3 @@
-nnoremap <C-k> :Commentary<CR>
+nnoremap <C-g> :Commentary<CR>
 " comment the current select context
 
