@@ -17,10 +17,10 @@ Table of Contents
 ----------------------------------------------------------------------------
 1. About                                                  *sobhanbera-about*
 
-All about the configuration of NeoVim I have done since 2019. All the 
-configuration files are in separate files like for all plugins it they 
-could be found in plugins.vim, variable setters could be found in 
-setters.vim and main vim file is init.vim where the configuration 
+All about the configuration of NeoVim I have done since 2019. All the
+configuration files are in separate files like for all plugins it they
+could be found in plugins.vim, variable setters could be found in
+setters.vim and main vim file is init.vim where the configuration
 execution starts.
 
 
@@ -68,6 +68,7 @@ GENERAL NVIM KEY BINDINGS (shortcuts.vim) :
 > CTRL + t, CTRL + j                                   - Next tab
 > CTRL + t, CTRL + k                                   - Previous tab
 > CTRL + w                                             - Close tab
+> LEADER + v                                           - Selects the current word into visual selection
 
 COMPETITIVE PROGRAMMING SHORTCUTS (utils.vim):
 > LEADER + lio                                         - opens in.txt and out.txt in vertical split
@@ -93,11 +94,11 @@ Plugins Shortcuts [Fugitive - fugitive.vim]:
 Plugins Shortcuts [Fuzzy finder - fzf.vim]:
 > LEADER + FF                                          - Provides a interface with all project files
 > LEADER + hh                                          - Provides a interface with all histories
-> LEADER + rg                                          - All files same 
+> LEADER + rg                                          - All files same
 > LEADER + bf                                          - All buffers list
 
 Plugins Shortcuts [LSP saga - luasaga.vim]:
-> CTRL + r                                             - diagnostic_jump_next for lua saga " don't user this currently 
+> CTRL + r                                             - diagnostic_jump_next for lua saga " don't user this currently
 
 Plugins Shortcuts [Maximizer - maximizer.vim]:
 > LEADER + m                                           - Maximize the current window
