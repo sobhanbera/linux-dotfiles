@@ -1,3 +1,6 @@
+
+" NOW MORE MINIMIZED THE NUMBER OF PLUGINS BY COMMENTING THEM
+
 " +-----------------------------------------------------+ "
 " |                        PLUGINS                      |
 " +-----------------------------------------------------+ "
@@ -68,13 +71,13 @@ Plug 'https://github.com/cocopon/iceberg.vim' " iceberg colorscheme
 " +-----------------------------------------------------+ "
 " |                   SYNTAX AND COLORS                 |
 " +-----------------------------------------------------+ "
-Plug 'https://github.com/ap/vim-css-color' " css colors
-Plug 'https://github.com/lilydjwg/colorizer' " highlight where every color hash or code is found in the entire codebase or files
+Plug 'https://github.com/ap/vim-css-color' " css colors more faster than the below plugin
+" Plug 'https://github.com/lilydjwg/colorizer' " highlight where every color hash or code is found in the entire codebase or files
 Plug 'https://github.com/frazrepo/vim-rainbow' " new rainbow brackets
 " Plug 'https://github.com/kien/rainbow_parentheses.vim' " old rainbow brackets
-Plug 'https://github.com/leafgarland/typescript-vim' " typescript for vim
-Plug 'https://github.com/peitalin/vim-jsx-typescript' " jsx + ts
-Plug 'https://github.com/lifepillar/pgsql.vim' " sql syntax
+" Plug 'https://github.com/leafgarland/typescript-vim' " typescript for vim
+" Plug 'https://github.com/peitalin/vim-jsx-typescript' " jsx + ts
+" Plug 'https://github.com/lifepillar/pgsql.vim' " sql syntax
 Plug 'https://github.com/itchyny/vim-cursorword' " highlight all words that are matching the word at cursor
 
 
@@ -97,16 +100,15 @@ Plug 'https://github.com/itchyny/vim-gitbranch' " git useful plugins
 " +-----------------------------------------------------+ "
 " |                       UTILITIES                     |
 " +-----------------------------------------------------+ "
-Plug 'https://github.com/kien/ctrlp.vim'
+" Plug 'https://github.com/kien/ctrlp.vim'
 Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder
 Plug 'https://github.com/junegunn/fzf.vim' " fuzzy finder
-Plug 'https://github.com/mileszs/ack.vim' " search tool
+" Plug 'https://github.com/mileszs/ack.vim' " search tool
 Plug 'https://github.com/szw/vim-maximizer' " window maximizer
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
-Plug 'https://github.com/wellle/context.vim'
+" Plug 'https://github.com/wellle/context.vim'
 Plug 'https://github.com/christoomey/vim-tmux-navigator' " ctrl-h, ctrl-k, ctrl-l, ctrl-j to navigate and more
 Plug 'https://github.com/kana/vim-repeat' " helps to reapeat keys press
-Plug 'https://github.com/chun-yang/auto-pairs' " auto complete the pair of brackets, [], {}, (), '', "", etc
 Plug 'https://github.com/alvan/vim-closetag' " close tags
 Plug 'https://github.com/mattesgroeger/vim-bookmarks'
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
@@ -117,8 +119,8 @@ Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple c
 " |                    SNIPPETS & CODES                 |
 " +-----------------------------------------------------+ "
 Plug 'https://github.com/sirver/ultisnips' " snippets
-Plug 'https://github.com/mattn/emmet-vim' " emmets
-Plug 'https://github.com/vimwiki/vimwiki' " wikis
+" Plug 'https://github.com/mattn/emmet-vim' " emmets
+" Plug 'https://github.com/vimwiki/vimwiki' " wikis
 
 
 
@@ -126,7 +128,7 @@ Plug 'https://github.com/vimwiki/vimwiki' " wikis
 " |                 TESTING & DEBUGGING                 |
 " +-----------------------------------------------------+ "
 Plug 'https://github.com/puremourning/vimspector' " debugger
-Plug 'https://github.com/janko/vim-test' " testing 
+" Plug 'https://github.com/janko/vim-test' " testing 
 
 
 
@@ -140,7 +142,7 @@ Plug 'https://github.com/janko/vim-test' " testing
 " +-----------------------------------------------------+ "
 " |                 EXTERNAL USE PLUGINS                |
 " +-----------------------------------------------------+ "
-Plug 'https://github.com/glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
+" Plug 'https://github.com/glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
 
 
 call plug#end()
