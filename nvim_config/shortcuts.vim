@@ -59,10 +59,10 @@ vnoremap <leader>p "+p
 vnoremap <leader>P "+P
 
 " disabling the arrow keys for some time
-noremap <Up> <Nop>
-noremap <Down> <Nop>
-noremap <Left> <Nop>
-noremap <Right> <Nop>
+" noremap <Up> <Nop>
+" noremap <Down> <Nop>
+" noremap <Left> <Nop>
+" noremap <Right> <Nop>
 
 noremap <leader>o :source $MYVIMRC<CR>:PlugInstall<CR>
 
