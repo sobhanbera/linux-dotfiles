@@ -113,6 +113,7 @@ Plug 'https://github.com/alvan/vim-closetag' " close tags
 Plug 'https://github.com/mattesgroeger/vim-bookmarks'
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 " Plug 'https://github.com/easymotion/vim-easymotion' " n and N was not working add this or remove the easymotion.vim plugin file
+Plug 'https://github.com/jiangmiao/auto-pairs'
 
 
 " +-----------------------------------------------------+ "
