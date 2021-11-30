@@ -20,7 +20,7 @@ source ~/.config/nvim/plugins/closetag.vim
 " source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/commentary.vim
 " source ~/.config/nvim/plugins/context.vim
-" source ~/.config/nvim/plugins/easymotion.vim
+source ~/.config/nvim/plugins/easymotion.vim
 source ~/.config/nvim/plugins/firenvim.vim
 source ~/.config/nvim/plugins/fugitive.vim
 source ~/.config/nvim/plugins/fzf.vim

@@ -65,6 +65,3 @@ vnoremap <leader>P "+P
 " noremap <Right> <Nop>
 
 noremap <leader>o :source $MYVIMRC<CR>:PlugInstall<CR>
-
-nnoremap <leader>v bve
-

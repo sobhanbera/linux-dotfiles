@@ -9,16 +9,16 @@ set guicursor=
 set tabstop=4 softtabstop=4 shiftwidth=4 expandtab autoindent smarttab smartindent
 set relativenumber nu
 set nowrap
-set smartcase
 set noswapfile nobackup undofile
 set undodir=~/.config/nvim/undodir
+set smartcase ignorecase
 set incsearch nohlsearch
 set hidden
 set history=10000
 set termguicolors
-set scrolloff=5
+set scrolloff=3
 set completeopt=menuone,noinsert,noselect
-set colorcolumn=130 signcolumn=yes
+set colorcolumn=180 signcolumn=yes
 set cmdheight=1
 set updatetime=200
 set shortmess+=c
