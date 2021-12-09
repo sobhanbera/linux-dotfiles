@@ -14,7 +14,7 @@ source ~/.config/nvim/win.vim
 " +-----------------------------------------------------+ "
 " |                     PLUGINS                         |
 " +-----------------------------------------------------+ "
-source ~/.config/nvim/plugins/ale.vim
+" source ~/.config/nvim/plugins/ale.vim
 source ~/.config/nvim/plugins/bookmark.vim
 source ~/.config/nvim/plugins/closetag.vim
 " source ~/.config/nvim/plugins/coc.vim
@@ -46,4 +46,3 @@ source ~/.config/nvim/plugins/vimspector.vim
 " +-----------------------------------------------------+ "
 " |                   END OF CONFIGS                    |
 " +-----------------------------------------------------+ "
-
