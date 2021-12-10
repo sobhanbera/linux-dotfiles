@@ -26,7 +26,7 @@ Plug 'https://github.com/craigemery/vim-autotag' " ctags package must be install
 " +-----------------------------------------------------+ "
 " |                    FILE FORMATTER                   |
 " +-----------------------------------------------------+ "
-Plug 'https://github.com/dense-analysis/ale' " file formatter
+" Plug 'https://github.com/dense-analysis/ale' " file formatter
 " since we are using lsp support and virtual texts by it so no need of this plugin....
 " Plug 'https://github.com/metakirby5/codi.vim' " virtual text output
 " Plug 'https://github.com/sbdchd/neoformat' " file format but currently not in use

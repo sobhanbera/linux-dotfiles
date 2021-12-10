@@ -23,6 +23,7 @@
 "xmap <leader>f  <Plug>(coc-format-selected)
 "nmap <leader>f  <Plug>(coc-format-selected)
 
+autocmd VimEnter *.* CocDisable <CR>
 "FOR VIM-PRETTIER
 autocmd BufWritePre *.js,*.jsx,*.ts,*.tsx,*.html,*.css CocCommand prettier.formatFile
 
