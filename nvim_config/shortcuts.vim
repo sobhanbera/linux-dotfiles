@@ -2,10 +2,7 @@
 " |                    NVIM MAPPINGS                    |
 " +-----------------------------------------------------+ "
 let mapleader=" "
-nnoremap <leader>s :source $MYVIMRC<CR> " s triggers sourcing of vimrc
-nnoremap <leader>e :e $MYVIMRC<CR> " opens vim config file
-nnoremap <leader>z <Esc>:w<CR> " save the file
-nnoremap <leader>q :q<CR> " clear the current buffer nvim/vim
+" nnoremap <leader>q :q<CR> " clear the current buffer nvim/vim
 
 " toggle or switch between tabs
 nnoremap <F2> :bprevious<CR>
