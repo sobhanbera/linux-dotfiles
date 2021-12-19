@@ -19,7 +19,9 @@ Plug 'https://github.com/nvim-telescope/telescope.nvim' " highly extendable fuzz
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " awesome syntax
 Plug 'https://github.com/ray-x/lsp_signature.nvim' " mainly for function signatures
 " Plug 'https://github.com/folke/trouble.nvim' " colored virtual text of LSP with this plugin...
-Plug 'https://github.com/craigemery/vim-autotag' " ctags package must be installed in the system. this plugin is used to jump to definitions
+" Plug 'https://github.com/craigemery/vim-autotag' " ctags package must be installed in the system. this plugin is used to jump to definitions
+Plug 'https://github.com/soramugi/auto-ctags.vim' " instead of the above plugin we are using this plugin to create auto tags when a file changes
+Plug 'https://github.com/nvim-lualine/lualine.nvim' " statusbar structure update
 
 
 
@@ -47,11 +49,11 @@ Plug 'https://github.com/github/copilot.vim' " The Github Copilot
 " |                    UI COMPONENTS                    |
 " +-----------------------------------------------------+ "
 " Plug 'https://github.com/romgrk/barbar.nvim' " tabview in nvim commented bcz may be causing lags or everytime opens file in new tab buffer
-Plug 'https://github.com/itchyny/lightline.vim' " vim bottom bar
+" Plug 'https://github.com/itchyny/lightline.vim' " vim bottom bar
 Plug 'https://github.com/scrooloose/nerdtree' " file system
 Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin' " git plugin for nerdtree nvim
-" Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight' " NERD TREE better highligher 
-Plug 'https://github.com/kassio/neoterm' " terminal for vim
+" Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight' " NERD TREE better highligher
+" " Plug 'https://github.com/kassio/neoterm' " terminal for vim
 Plug 'https://github.com/kyazdani42/nvim-web-devicons' " required for tab plugin
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons seperate
 Plug 'https://github.com/psliwka/vim-smoothie' " smooth vim movements
@@ -61,24 +63,24 @@ Plug 'https://github.com/psliwka/vim-smoothie' " smooth vim movements
 " +-----------------------------------------------------+ "
 " |                     COLORSCHEMES                    |
 " +-----------------------------------------------------+ "
-Plug 'https://github.com/morhetz/gruvbox' " theme or colorscheme
-Plug 'https://github.com/fenetikm/falcon' " falcon colorscheme
+" " Plug 'https://github.com/morhetz/gruvbox' " theme or colorscheme
+" " Plug 'https://github.com/fenetikm/falcon' " falcon colorscheme
 Plug 'https://github.com/ayu-theme/ayu-vim' " ayu colorscheme
-Plug 'https://github.com/cocopon/iceberg.vim' " iceberg colorscheme
+" " Plug 'https://github.com/cocopon/iceberg.vim' " iceberg colorscheme
 
 
 
 " +-----------------------------------------------------+ "
 " |                   SYNTAX AND COLORS                 |
 " +-----------------------------------------------------+ "
-Plug 'https://github.com/ap/vim-css-color' " css colors more faster than the below plugin
+" " Plug 'https://github.com/ap/vim-css-color' " css colors more faster than the below plugin
 " Plug 'https://github.com/lilydjwg/colorizer' " highlight where every color hash or code is found in the entire codebase or files
-Plug 'https://github.com/frazrepo/vim-rainbow' " new rainbow brackets
+" " Plug 'https://github.com/frazrepo/vim-rainbow' " new rainbow brackets
 " Plug 'https://github.com/kien/rainbow_parentheses.vim' " old rainbow brackets
 " Plug 'https://github.com/leafgarland/typescript-vim' " typescript for vim
 " Plug 'https://github.com/peitalin/vim-jsx-typescript' " jsx + ts
 " Plug 'https://github.com/lifepillar/pgsql.vim' " sql syntax
-Plug 'https://github.com/itchyny/vim-cursorword' " highlight all words that are matching the word at cursor
+" " Plug 'https://github.com/itchyny/vim-cursorword' " highlight all words that are matching the word at cursor
 
 
 Plug 'https://github.com/mhinz/vim-startify' " vim start window UI provider
@@ -101,8 +103,8 @@ Plug 'https://github.com/itchyny/vim-gitbranch' " git useful plugins
 " |                       UTILITIES                     |
 " +-----------------------------------------------------+ "
 " Plug 'https://github.com/kien/ctrlp.vim'
-Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder
-Plug 'https://github.com/junegunn/fzf.vim' " fuzzy finder
+" " Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder
+" " Plug 'https://github.com/junegunn/fzf.vim' " fuzzy finder
 " Plug 'https://github.com/mileszs/ack.vim' " search tool
 Plug 'https://github.com/szw/vim-maximizer' " window maximizer
 Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
@@ -113,7 +115,10 @@ Plug 'https://github.com/alvan/vim-closetag' " close tags
 Plug 'https://github.com/mattesgroeger/vim-bookmarks'
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'https://github.com/easymotion/vim-easymotion' " n and N was not working add this or remove the easymotion.vim plugin file. actually this plugin contains a map with n/N remove them so that you could navigate easily
-Plug 'https://github.com/jiangmiao/auto-pairs' " just want to do it manually
+" " Plug 'https://github.com/jiangmiao/auto-pairs' " just want to do it manually
+Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " plugin to preview markdown code
+Plug 'https://github.com/francoiscabrol/ranger.vim' " ranger file manager for vim
+
 
 
 " +-----------------------------------------------------+ "
@@ -128,8 +133,8 @@ Plug 'https://github.com/sirver/ultisnips' " snippets
 " +-----------------------------------------------------+ "
 " |                 TESTING & DEBUGGING                 |
 " +-----------------------------------------------------+ "
-Plug 'https://github.com/puremourning/vimspector' " debugger
-" Plug 'https://github.com/janko/vim-test' " testing 
+" " Plug 'https://github.com/puremourning/vimspector' " debugger
+" Plug 'https://github.com/janko/vim-test' " testing
 
 
 
