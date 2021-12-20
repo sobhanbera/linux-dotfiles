@@ -2,7 +2,10 @@ snippet rnfc "React Native Functional Component" b
 import React from 'react';
 import {View, Text, StyleSheet} from 'react-native';
 
-const ${1:Component} = (${3:props}) => {
+interface Props {
+	$5
+}
+const ${1:Component} = (${4:props}: Props) => {
 	return (
 		${0:<View>
 			<Text>${2:Component} Component</Text>
@@ -16,13 +19,16 @@ const styles = StyleSheet.create({
 	}
 });
 
-export default ${1:Component};
+export default ${3:Component};
 
 endsnippet
 
 snippet rfc "React Native Functional Component" b
 import React from 'react';
 
+interface Props {
+	$4
+}
 const ${1:Component} = (${3:props}) => {
 	return (
 		${0:<div>
@@ -37,5 +43,6 @@ endsnippet
 snippet log "Javascript | Typescript console log statement..." b
 console.log($1);$0
 endsnippet
+
 
 

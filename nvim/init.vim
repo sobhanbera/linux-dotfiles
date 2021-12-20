@@ -17,7 +17,7 @@ source ~/.config/nvim/.private.vim
 " +-----------------------------------------------------+ "
 " source ~/.config/nvim/plugins/ale.vim
 source ~/.config/nvim/plugins/bookmark.vim
-source ~/.config/nvim/plugins/closetag.vim
+" source ~/.config/nvim/plugins/closetag.vim
 " source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/commentary.vim
 " source ~/.config/nvim/plugins/context.vim
@@ -26,7 +26,6 @@ source ~/.config/nvim/plugins/firenvim.vim
 source ~/.config/nvim/plugins/fugitive.vim
 " source ~/.config/nvim/plugins/fzf.vim
 source ~/.config/nvim/plugins/lightline.vim
-source ~/.config/nvim/plugins/lsp_auto_formatter.vim
 source ~/.config/nvim/plugins/lualine.vim
 source ~/.config/nvim/plugins/lsp_signature.vim
 source ~/.config/nvim/plugins/lsp.vim
