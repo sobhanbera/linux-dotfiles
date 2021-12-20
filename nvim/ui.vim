@@ -21,7 +21,7 @@ let ayucolor="dark"   " for dark version of theme
 " +-----------------------------------------------------+ "
 colorscheme ayu " calling this after because by default the above line does not execute by its own so needs to be triggered
 
-hi Normal guibg=NONE
-hi CursorLine gui=NONE cterm=NONE
+" hi Normal guibg=NONE
+" hi CursorLine gui=NONE cterm=NONE
 " highlight ColorColumn ctermbg=0 guibg=#3C3835  " highlight the column number
-highlight OverLength ctermbg=NONE ctermfg=NONE guibg=#000000 guifg=#ADFF2F " highlight the line that is too long
+" highlight OverLength ctermbg=NONE ctermfg=NONE guibg=#000000 guifg=#ADFF2F " highlight the line that is too long

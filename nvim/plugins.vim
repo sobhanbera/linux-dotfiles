@@ -22,6 +22,7 @@ Plug 'https://github.com/ray-x/lsp_signature.nvim' " mainly for function signatu
 " Plug 'https://github.com/craigemery/vim-autotag' " ctags package must be installed in the system. this plugin is used to jump to definitions
 Plug 'https://github.com/soramugi/auto-ctags.vim' " instead of the above plugin we are using this plugin to create auto tags when a file changes
 Plug 'https://github.com/nvim-lualine/lualine.nvim' " statusbar structure update
+Plug 'https://github.com/onsails/lspkind-nvim' " auto complete menu icons
 
 
 
@@ -152,3 +153,4 @@ Plug 'https://github.com/sirver/ultisnips' " snippets
 
 
 call plug#end()
+
