@@ -19,12 +19,12 @@ require'lualine'.setup {
     lualine_z = {'location'}
   },
   inactive_sections = {
-    lualine_a = {},
-    lualine_b = {},
-    lualine_c = {'filename'},
-    lualine_x = {'location'},
-    lualine_y = {"os.date('%a %Y-%M-%d')", 'data', "require'lsp-status'.status()"},
-    lualine_z = {}
+    lualine_a = {'mode'},
+    lualine_b = {'branch', 'diff', 'diagnostics'},
+    lualine_c = {'filename', "os.date('%a')", 'data', "require'lsp-status'.status()"},
+    lualine_x = {'encoding', 'fileformat', 'filetype'},
+    lualine_y = {'progress'},
+    lualine_z = {'location'}
   },
   theme = 'ayu',
   tabline = {},
