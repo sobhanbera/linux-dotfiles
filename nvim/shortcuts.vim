@@ -9,7 +9,9 @@ nnoremap <F2> :bprevious<CR>
 nnoremap <F3> :bnext<CR>
 
 nnoremap <leader>vs <Esc>:vs<CR> " split window vertical
-nnoremap <leader>hs <Esc>:hs<CR> " split window vertical
+nnoremap <leader>hs <Esc>:split<CR> " split window vertical
+
+vnoremap Y "+y
 
 nnoremap <leader>bN :bprevious<CR> " go to previous buffer
 nnoremap <leader>bn :bnext<CR> " goto next buffer

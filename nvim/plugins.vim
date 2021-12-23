@@ -14,8 +14,12 @@ call plug#begin()
 Plug 'https://github.com/neovim/nvim-lspconfig' " NVIM LSP CONFIG
 Plug 'https://github.com/glepnir/lspsaga.nvim' " saga for lsp to show popup msgs
 Plug 'https://github.com/hrsh7th/nvim-compe' " Best autocompletion plugin
+
+Plug 'https://github.com/nvim-lua/popup.nvim'
 Plug 'https://github.com/nvim-lua/plenary.nvim' " Lua module for asynchronous programming using coroutines
 Plug 'https://github.com/nvim-telescope/telescope.nvim' " highly extendable fuzzy finder
+Plug 'https://github.com/nvim-telescope/telescope-fzy-native.nvim'
+
 Plug 'https://github.com/nvim-treesitter/nvim-treesitter', {'do': ':TSUpdate'} " awesome syntax
 Plug 'https://github.com/ray-x/lsp_signature.nvim' " mainly for function signatures
 " Plug 'https://github.com/folke/trouble.nvim' " colored virtual text of LSP with this plugin...
@@ -75,7 +79,7 @@ Plug 'https://github.com/ayu-theme/ayu-vim' " ayu colorscheme
 " |                   SYNTAX AND COLORS                 |
 " +-----------------------------------------------------+ "
 " " Plug 'https://github.com/ap/vim-css-color' " css colors more faster than the below plugin
-" Plug 'https://github.com/lilydjwg/colorizer' " highlight where every color hash or code is found in the entire codebase or files
+Plug 'https://github.com/lilydjwg/colorizer' " highlight where every color hash or code is found in the entire codebase or files
 " " Plug 'https://github.com/frazrepo/vim-rainbow' " new rainbow brackets
 " Plug 'https://github.com/kien/rainbow_parentheses.vim' " old rainbow brackets
 " Plug 'https://github.com/leafgarland/typescript-vim' " typescript for vim
@@ -116,9 +120,10 @@ Plug 'https://github.com/alvan/vim-closetag' " close tags
 Plug 'https://github.com/mattesgroeger/vim-bookmarks'
 Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'https://github.com/easymotion/vim-easymotion' " n and N was not working add this or remove the easymotion.vim plugin file. actually this plugin contains a map with n/N remove them so that you could navigate easily
-" " Plug 'https://github.com/jiangmiao/auto-pairs' " just want to do it manually
+Plug 'https://github.com/jiangmiao/auto-pairs' " just want to do it manually
 Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " plugin to preview markdown code
 Plug 'https://github.com/francoiscabrol/ranger.vim' " ranger file manager for vim
+Plug 'https://github.com/folke/todo-comments.nvim' " TODO highlighter
 
 
 
