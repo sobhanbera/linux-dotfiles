@@ -62,6 +62,7 @@ Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin' " git plugin for nerdtree 
 Plug 'https://github.com/kyazdani42/nvim-web-devicons' " required for tab plugin
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons seperate
 Plug 'https://github.com/psliwka/vim-smoothie' " smooth vim movements
+Plug 'https://github.com/lukas-reineke/indent-blankline.nvim' " indentation for blank lines
 
 
 

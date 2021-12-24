@@ -106,7 +106,7 @@ local actions = require('telescope.actions')
 require('telescope').setup {
     defaults = {
         file_sorter = require("telescope.sorters").get_fzy_sorter,
-        prompt_prefix = " > ",
+        prompt_prefix = " -:> ",
         color_devicons = true,
 
         file_previewer = require("telescope.previewers").vim_buffer_cat.new,
@@ -131,10 +131,10 @@ require('telescope').setup {
 require("telescope").load_extension("fzy_native")
 EOF
 " git files
-nnoremap <leader>gf <cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown({ prompt_title = "< Find Git File >" }))<CR>
+nnoremap <leader>f <cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown({ prompt_title = "< Find Git File >" }))<CR>
 " find any file
 nnoremap <leader>ff <cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ prompt_title = "< Search Files >" }))<cr>
-nnoremap <leader>fg <cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown({ prompt_title = "< Search for code >" }))<cr>
+nnoremap <leader>gr <cmd>lua require('telescope.builtin').live_grep(require('telescope.themes').get_dropdown({ prompt_title = "< Search for code >" }))<cr>
 nnoremap <leader>fh <cmd>lua require('telescope.builtin').help_tags(require('telescope.themes').get_dropdown({ prompt_title = "< Find Tags >" }))<cr>
 " pick color scheme
 nnoremap <leader>cs <cmd>lua require('telescope.builtin').colorscheme(require('telescope.themes').get_dropdown({ prompt_title = "< Set Colorscheme >" }))<cr>
@@ -153,3 +153,16 @@ nnoremap ; <cmd>lua require('telescope.builtin').buffers(require('telescope.them
 nnoremap <leader>vim <cmd>lua require("telescope.builtin").find_files(require('telescope.themes').get_dropdown({ prompt_title = "< Find Vim Config File >", cwd = '~/.config/nvim', hidden = true, theme}))<CR>
 " search files in CP
 nnoremap <leader>co <cmd>lua require("telescope.builtin").find_files(require('telescope.themes').get_dropdown({ prompt_title = "< Find Vim Config File >", cwd = '~/Documents/Codes', hidden = true, theme}))<CR>
+
+" +-----------------------------------------------------+ "
+" |     INDENT BLANK LINE PLUGIN CONFIG                 |
+" +-----------------------------------------------------+ "
+lua << EOF
+vim.cmd [[highlight IndentBlanklineContextChar guifg=#60b8d6 gui=nocombine]]
+require("indent_blankline").setup {
+        -- for example, context is off by default, use this to turn it on
+        show_current_context = true,
+        show_current_context_start = true,
+}
+EOF
+
