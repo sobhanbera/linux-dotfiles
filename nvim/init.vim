@@ -4,7 +4,7 @@
 source ~/.config/nvim/setters.vim
 source ~/.config/nvim/plugins.vim
 source ~/.config/nvim/ui.vim
-source ~/.config/nvim/shortcuts.vim
+source ~/.config/nvim/mappings.vim
 source ~/.config/nvim/utils.vim
 source ~/.config/nvim/win.vim
 source ~/.config/nvim/.private.vim
@@ -40,7 +40,7 @@ source ~/.config/nvim/plugins/nvim_compe.vim
 source ~/.config/nvim/plugins/ranger.vim
 source ~/.config/nvim/plugins/startify.vim
 source ~/.config/nvim/plugins/tagbar.vim
-" " source ~/.config/nvim/plugins/telescope.vim DELETED: 
+" " source ~/.config/nvim/plugins/telescope.vim DELETED:
 source ~/.config/nvim/plugins/todo_comments.vim
 source ~/.config/nvim/plugins/treesitter.vim
 " source ~/.config/nvim/plugins/trouble.vim
@@ -51,3 +51,8 @@ source ~/.config/nvim/plugins/vimspector.vim
 " +-----------------------------------------------------+ "
 " |                   END OF CONFIGS                    |
 " +-----------------------------------------------------+ "
+command! -nargs=1 Nf call s:NewFile(<q-args>)
+function! s:NewFile(fp)
+    echom a:fp
+    execute "e " . expand("%:h") . "/" . a:fp
+endfunction
