@@ -11,7 +11,8 @@ nnoremap <F3> :bnext<CR>
 nnoremap <leader>vs <Esc>:vs<CR> " split window vertical
 nnoremap <leader>hs <Esc>:split<CR> " split window vertical
 
-vnoremap Y "+y
+vnoremap y "+y
+nnoremap Y y$
 
 nnoremap <leader>bN :bprevious<CR> " go to previous buffer
 nnoremap <leader>bn :bnext<CR> " goto next buffer
@@ -64,3 +65,34 @@ vnoremap <leader>P "+P
 " noremap <Right> <Nop>
 
 noremap <leader>o :source $MYVIMRC<CR>:PlugInstall<CR>
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"|         MANY USEFUL MAPPINGS FOR DEVELOPERS          |"
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Moving lines of text from one position to adjacent line position
+vnoremap J :m '>+1<CR>gv=gv
+vnoremap K :m '<-2<CR>gv=gv
+inoremap <C-j> <esc>:m .+1m<CR>==
+inoremap <C-k> <esc>:m .-2m<CR>==
+nnoremap <leader>K :m .-2<CR>==
+nnoremap <leader>J :m .+1<CR>==
+
+" Undo breaks throughout any code characters
+inoremap \@ \@<c-g>u
+inoremap \- \-<c-g>u
+inoremap \+ \+<c-g>u
+inoremap , ,<c-g>u
+inoremap . .<c-g>u
+inoremap / /<c-g>u
+
+" mutation of Jumplist
+nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
+nnoremap <expr> j (v:count > 5 ? "m'" . v:count : "") . 'j'
+
+" keeping the current line at center when searching
+nnoremap n nzzzv
+nnoremap * nzzzv
+nnoremap N Nzzzv
+nnoremap # Nzzzv
+nnoremap J msJ`s
+
