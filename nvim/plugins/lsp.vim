@@ -79,6 +79,15 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
     buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     buf_set_keymap('n', '<space>gf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+    -- if client.resolved_capabilities.document_formatting then
+    --     vim.cmd [[augroup Format]]
+    --     vim.cmd [[autocmd! * <buffer>]]
+    --     vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]]
+    --     vim.cmd [[augroup END]]
+    -- else
+    --     echo 'NOT'
+    -- end
 end
 
 -- " +-----------------------------------------------------+ "
@@ -154,6 +163,8 @@ nnoremap <leader>vim <cmd>lua require("telescope.builtin").find_files(require('t
 " search files in CP
 nnoremap <leader>co <cmd>lua require("telescope.builtin").find_files(require('telescope.themes').get_dropdown({ prompt_title = "< Find Vim Config File >", cwd = '~/Documents/Codes', hidden = true, theme}))<CR>
 
+
+
 " +-----------------------------------------------------+ "
 " |     INDENT BLANK LINE PLUGIN CONFIG                 |
 " +-----------------------------------------------------+ "
@@ -166,3 +177,60 @@ require("indent_blankline").setup {
 }
 EOF
 
+
+
+" +-----------------------------------------------------+ "
+" |     INDENT BLANK LINE PLUGIN CONFIG                 |
+" +-----------------------------------------------------+ "
+" lua << EOF
+" require('bufferline').setup {
+"   options = {
+"     numbers =  "both",
+"     -- number_style = "superscript",
+"     close_command = "bdelete! %d",
+"     right_mouse_command = "bdelete! %d",
+"     left_mouse_command = "buffer %d",
+"     middle_mouse_command = nil,
+"     indicator_icon = '▎',
+"     buffer_close_icon = '',
+"     modified_icon = '●',
+"     close_icon = '',
+"     left_trunc_marker = '',
+"     right_trunc_marker = '',
+"     name_formatter = function(buf)
+"       if buf.name:match('%.md') then
+"         return vim.fn.fnamemodify(buf.name, ':t:r')
+"       end
+"     end,
+"     max_name_length = 18,
+"     max_prefix_length = 15,
+"     tab_size = 18,
+"     diagnostics = "nvim_lsp",
+"     diagnostics_update_in_insert = false,
+"     diagnostics_indicator = function(count, level, diagnostics_dict, context)
+"       return "("..count..")"
+"     end,
+"     custom_filter = function(buf_number)
+"       if vim.bo[buf_number].filetype ~= "<i-dont-want-to-see-this>" then
+"         return true
+"       end
+"       if vim.fn.bufname(buf_number) ~= "<buffer-name-I-dont-want>" then
+"         return true
+"       end
+"       if vim.fn.getcwd() == "<work-repo>" and vim.bo[buf_number].filetype ~= "wiki" then
+"         return true
+"       end
+"     end,
+"     offsets = {{filetype = "NvimTree", text = "File Explorer", text_align = "left"}},
+"     show_buffer_icons = true,
+"     show_buffer_close_icons = true,
+"     show_close_icon = true,
+"     show_tab_indicators = true,
+"     persist_buffer_sort = true,
+"     separator_style = "thin",
+"     enforce_regular_tabs = true,
+"     always_show_bufferline = false,
+"     sort_by = 'relative_directory',
+"   }
+" }
+" EOF

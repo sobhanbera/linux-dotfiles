@@ -5,8 +5,6 @@
 " |                        PLUGINS                      |
 " +-----------------------------------------------------+ "
 call plug#begin()
-
-
 " +-----------------------------------------------------+ "
 " |           LSP PLUGINS & AUTOCOMPLETE                |
 " +-----------------------------------------------------+ "
@@ -29,7 +27,6 @@ Plug 'https://github.com/nvim-lualine/lualine.nvim' " statusbar structure update
 Plug 'https://github.com/onsails/lspkind-nvim' " auto complete menu icons
 
 
-
 " +-----------------------------------------------------+ "
 " |                    FILE FORMATTER                   |
 " +-----------------------------------------------------+ "
@@ -42,12 +39,10 @@ Plug 'https://github.com/onsails/lspkind-nvim' " auto complete menu icons
 " Plug 'https://github.com/fsouza/prettierd' " prettier helper to make it fast
 
 
-
 " +-----------------------------------------------------+ "
 " |                    GITHUB COPILOT                   |
 " +-----------------------------------------------------+ "
 Plug 'https://github.com/github/copilot.vim' " The Github Copilot
-
 
 
 " +-----------------------------------------------------+ "
@@ -55,15 +50,25 @@ Plug 'https://github.com/github/copilot.vim' " The Github Copilot
 " +-----------------------------------------------------+ "
 " Plug 'https://github.com/romgrk/barbar.nvim' " tabview in nvim commented bcz may be causing lags or everytime opens file in new tab buffer
 " Plug 'https://github.com/itchyny/lightline.vim' " vim bottom bar
-Plug 'https://github.com/scrooloose/nerdtree' " file system
+" Plug 'https://github.com/scrooloose/nerdtree' " file system
+Plug 'https://github.com/kyazdani42/nvim-tree.lua' " file system build with lua
 Plug 'https://github.com/Xuyuanp/nerdtree-git-plugin' " git plugin for nerdtree nvim
 " Plug 'https://github.com/tiagofumo/vim-nerdtree-syntax-highlight' " NERD TREE better highligher
 " " Plug 'https://github.com/kassio/neoterm' " terminal for vim
 Plug 'https://github.com/kyazdani42/nvim-web-devicons' " required for tab plugin
 Plug 'https://github.com/ryanoasis/vim-devicons' " Developer Icons seperate
-Plug 'https://github.com/psliwka/vim-smoothie' " smooth vim movements
 Plug 'https://github.com/lukas-reineke/indent-blankline.nvim' " indentation for blank lines
-
+" Plug 'https://github.com/akinsho/bufferline.nvim'
+Plug 'https://github.com/jiangmiao/auto-pairs' " just want to do it manually
+Plug 'https://github.com/francoiscabrol/ranger.vim' " ranger file manager for vim
+Plug 'https://github.com/folke/todo-comments.nvim' " TODO highlighter
+Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " plugin to preview markdown code
+Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
+Plug 'https://github.com/szw/vim-maximizer' " window maximizer
+Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
+Plug 'https://github.com/mhinz/vim-startify' " vim start window UI provider
+Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
+Plug 'https://github.com/tpope/vim-commentary' " vim comment link helper
 
 
 " +-----------------------------------------------------+ "
@@ -73,7 +78,6 @@ Plug 'https://github.com/lukas-reineke/indent-blankline.nvim' " indentation for 
 " " Plug 'https://github.com/fenetikm/falcon' " falcon colorscheme
 Plug 'https://github.com/ayu-theme/ayu-vim' " ayu colorscheme
 " " Plug 'https://github.com/cocopon/iceberg.vim' " iceberg colorscheme
-
 
 
 " +-----------------------------------------------------+ "
@@ -89,20 +93,12 @@ Plug 'https://github.com/lilydjwg/colorizer' " highlight where every color hash 
 " " Plug 'https://github.com/itchyny/vim-cursorword' " highlight all words that are matching the word at cursor
 
 
-Plug 'https://github.com/mhinz/vim-startify' " vim start window UI provider
-
-Plug 'http://github.com/tpope/vim-surround' " Surrounding ysw)
-Plug 'https://github.com/tpope/vim-commentary' " vim comment link helper
-
-
-
 " +-----------------------------------------------------+ "
 " |                 GIT/GITHUB RELATIVE                 |
 " +-----------------------------------------------------+ "
 Plug 'https://github.com/tpope/vim-fugitive' " git useful plugins
 Plug 'https://github.com/airblade/vim-gitgutter' " git useful plugins
 Plug 'https://github.com/itchyny/vim-gitbranch' " git useful plugins
-
 
 
 " +-----------------------------------------------------+ "
@@ -112,20 +108,13 @@ Plug 'https://github.com/itchyny/vim-gitbranch' " git useful plugins
 " " Plug 'https://github.com/junegunn/fzf', { 'dir': '~/.fzf', 'do': './install --all' } " fuzzy finder
 " " Plug 'https://github.com/junegunn/fzf.vim' " fuzzy finder
 " Plug 'https://github.com/mileszs/ack.vim' " search tool
-Plug 'https://github.com/szw/vim-maximizer' " window maximizer
-Plug 'https://github.com/preservim/tagbar' " Tagbar for code navigation
 " Plug 'https://github.com/wellle/context.vim'
 Plug 'https://github.com/christoomey/vim-tmux-navigator' " ctrl-h, ctrl-k, ctrl-l, ctrl-j to navigate and more
 Plug 'https://github.com/kana/vim-repeat' " helps to reapeat keys press
 Plug 'https://github.com/alvan/vim-closetag' " close tags
 Plug 'https://github.com/mattesgroeger/vim-bookmarks'
-Plug 'https://github.com/terryma/vim-multiple-cursors' " CTRL + N for multiple cursors
 Plug 'https://github.com/easymotion/vim-easymotion' " n and N was not working add this or remove the easymotion.vim plugin file. actually this plugin contains a map with n/N remove them so that you could navigate easily
-Plug 'https://github.com/jiangmiao/auto-pairs' " just want to do it manually
-Plug 'https://github.com/iamcco/markdown-preview.nvim', { 'do': 'cd app && yarn install'  } " plugin to preview markdown code
-Plug 'https://github.com/francoiscabrol/ranger.vim' " ranger file manager for vim
-Plug 'https://github.com/folke/todo-comments.nvim' " TODO highlighter
-
+Plug 'https://github.com/psliwka/vim-smoothie' " smooth vim movements
 
 
 " +-----------------------------------------------------+ "
@@ -133,8 +122,7 @@ Plug 'https://github.com/folke/todo-comments.nvim' " TODO highlighter
 " +-----------------------------------------------------+ "
 Plug 'https://github.com/sirver/ultisnips' " snippets
 " Plug 'https://github.com/mattn/emmet-vim' " emmets
-" Plug 'https://github.com/vimwiki/vimwiki' " wikis
-
+Plug 'https://github.com/vimwiki/vimwiki' " wikis
 
 
 " +-----------------------------------------------------+ "
@@ -144,19 +132,15 @@ Plug 'https://github.com/sirver/ultisnips' " snippets
 " Plug 'https://github.com/janko/vim-test' " testing
 
 
-
 " +-----------------------------------------------------+ "
 " |                 DEVELOPER SPECIFIC                  |
 " +-----------------------------------------------------+ "
 " Plug 'https://github.com/wakatime/vim-wakatime' " wakatime a developer statistics provider
 
 
-
 " +-----------------------------------------------------+ "
 " |                 EXTERNAL USE PLUGINS                |
 " +-----------------------------------------------------+ "
 " Plug 'https://github.com/glacambre/firenvim', { 'do': { _ -> firenvim#install(0) } }
-
-
 call plug#end()
 

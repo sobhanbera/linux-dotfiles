@@ -20,6 +20,7 @@ source ~/.config/nvim/plugins/bookmark.vim
 " source ~/.config/nvim/plugins/coc.vim
 source ~/.config/nvim/plugins/commentary.vim
 " source ~/.config/nvim/plugins/context.vim
+source ~/.config/nvim/plugins/COPILOT.vim
 source ~/.config/nvim/plugins/easymotion.vim
 " source ~/.config/nvim/plugins/firenvim.vim
 source ~/.config/nvim/plugins/fugitive.vim
@@ -33,8 +34,9 @@ source ~/.config/nvim/plugins/luasaga.vim
 source ~/.config/nvim/plugins/markdown_preview.vim
 source ~/.config/nvim/plugins/maximizer.vim
 source ~/.config/nvim/plugins/neoterm.vim
-source ~/.config/nvim/plugins/nerdtree.vim
+" " source ~/.config/nvim/plugins/nerdtree.vim
 source ~/.config/nvim/plugins/nvim_compe.vim
+source ~/.config/nvim/plugins/nvim_tree.vim
 " source ~/.config/nvim/plugins/prettier.vim
 " source ~/.config/nvim/plugins/rainbow.vim
 source ~/.config/nvim/plugins/ranger.vim
@@ -51,8 +53,4 @@ source ~/.config/nvim/plugins/vimspector.vim
 " +-----------------------------------------------------+ "
 " |                   END OF CONFIGS                    |
 " +-----------------------------------------------------+ "
-command! -nargs=1 Nf call s:NewFile(<q-args>)
-function! s:NewFile(fp)
-    echom a:fp
-    execute "e " . expand("%:h") . "/" . a:fp
-endfunction
+
