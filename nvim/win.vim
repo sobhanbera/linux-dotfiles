@@ -1,8 +1,8 @@
 " +-----------------------------------------------------+ "
 " |            CONFIG RELATED TO WINDOW                 |
 " +-----------------------------------------------------+ "
-" source $VIMRUNTIME/mswin.vim
-" behave mswin
+source $VIMRUNTIME/mswin.vim
+behave mswin
 
 " if &diffopt !~# 'internal'
 "   set diffexpr=MyDiff()

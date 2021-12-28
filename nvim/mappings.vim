@@ -5,19 +5,12 @@ let mapleader=" "
 " nnoremap <leader>q :q<CR> " clear the current buffer nvim/vim
 
 " toggle or switch between tabs
-nnoremap <F2> :bprevious<CR>
-nnoremap <F3> :bnext<CR>
+" nnoremap <F2> :bprevious<CR>
+" nnoremap <F3> :bnext<CR>
 
+noremap <leader>o :source $MYVIMRC<CR>:PlugInstall<CR>
 nnoremap <leader>vs <Esc>:vs<CR> " split window vertical
 nnoremap <leader>hs <Esc>:split<CR> " split window vertical
-
-" by default when copying the text will register on + register or the system global clipboard...
-vnoremap y "+y
-nnoremap Y y$
-
-" by default when deleting the clipboard will update...
-nnoremap d "+x
-vnoremap d "+x
 
 nnoremap <leader>bN :bprevious<CR> " go to previous buffer
 nnoremap <leader>bn :bnext<CR> " goto next buffer
@@ -51,39 +44,14 @@ nnoremap <C-w> :bd<CR>
 nnoremap <leader>T :tabprevious<CR>
 nnoremap <leader>t :tabnext<CR>
 
-" Copy to clipboard
-vnoremap  <leader>y  "+y
-nnoremap  <leader>y  "+y
+" backspace and cursor keys wrap to previous/next line
+set backspace=indent,eol,start whichwrap+=<,>,[,]
 
-nnoremap  <leader>Y  "+yg_
-nnoremap  <leader>yy  "+yy
-
-" Paste from clipboard
-nnoremap <leader>p "+p
-nnoremap <leader>P "+P
-
-vnoremap <leader>p "+p
-vnoremap <leader>P "+P
-
-" vnoremap <C-X> "+x
-" vnoremap <S-Del> "+x
-" inoremap <C-X> "+x
-" inoremap <S-Del> "+x
-
-" vnoremap <C-C> "+y
-" vnoremap <C-Insert> "+y
-" inoremap <C-C> "+y
-" inoremap <C-Insert> "+y
-
-noremap <C-Z> u
-inoremap <C-Z> <C-O>u
 " disabling the arrow keys for some time
 " noremap <Up> <Nop>
 " noremap <Down> <Nop>
 " noremap <Left> <Nop>
 " noremap <Right> <Nop>
-
-noremap <leader>o :source $MYVIMRC<CR>:PlugInstall<CR>
 
 """"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "|         MANY USEFUL MAPPINGS FOR DEVELOPERS          |"
@@ -114,4 +82,7 @@ nnoremap N Nzzzv
 nnoremap * *zzzv
 nnoremap # #zzzv
 nnoremap J msJ`s
+
+" sessions helper mappings
+nnoremap <leader>mks :mks! nvim-session.sobhanbera
 
