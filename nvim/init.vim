@@ -15,6 +15,7 @@ source ~/.config/nvim/.private.vim
 " +-----------------------------------------------------+ "
 " source ~/.config/nvim/plugins/ale.vim
 " source ~/.config/nvim/plugins/auto_tags.vim
+source ~/.config/nvim/plugins/barbar.vim
 source ~/.config/nvim/plugins/bookmark.vim
 " source ~/.config/nvim/plugins/closetag.vim
 " source ~/.config/nvim/plugins/coc.vim
