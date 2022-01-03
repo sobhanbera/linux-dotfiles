@@ -86,3 +86,12 @@ nnoremap J msJ`s
 " sessions helper mappings
 nnoremap <leader>mks :mks! nvim-session.sobhanbera
 
+" mappings for copy and paste purpose...
+vnoremap y "+y
+nnoremap Y y$
+nnoremap y "+yg
+nnoremap yy "+yy
+nnoremap p "+p
+nnoremap P "+P
+vnoremap d "+x
+nnoremap dd "+dd

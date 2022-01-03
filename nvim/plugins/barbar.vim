@@ -40,7 +40,7 @@ nnoremap <silent> <Space>bw :BufferOrderByWindowNumber<CR>
 " NOTE: If barbar's option dict isn't created yet, create it
 let bufferline = get(g:, 'bufferline', {})
 " Enable/disable auto-hiding the tab bar when there is a single buffer
-let bufferline.auto_hide = v:false
+let bufferline.auto_hide = v:true
 
 " Enable/disable current/total tabpages indicator (top right corner)
 let bufferline.tabpages = v:true

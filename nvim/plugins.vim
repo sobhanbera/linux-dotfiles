@@ -23,7 +23,8 @@ Plug 'ray-x/lsp_signature.nvim' " mainly for function signatures
 " Plug 'folke/trouble.nvim' " colored virtual text of LSP with this plugin...
 " Plug 'craigemery/vim-autotag' " ctags package must be installed in the system. this plugin is used to jump to definitions
 Plug 'soramugi/auto-ctags.vim' " instead of the above plugin we are using this plugin to create auto tags when a file changes
-Plug 'nvim-lualine/lualine.nvim' " statusbar structure update
+Plug 'nvim-lualine/lualine.nvim' " statusbar structure update ui
+Plug 'akinsho/bufferline.nvim' " ui
 Plug 'onsails/lspkind-nvim' " auto complete menu icons
 
 
@@ -36,7 +37,7 @@ Plug 'github/copilot.vim' " The Github Copilot
 " +-----------------------------------------------------+ "
 " |                    UI COMPONENTS                    |
 " +-----------------------------------------------------+ "
-Plug 'romgrk/barbar.nvim' " tabview in nvim commented bcz may be causing lags or everytime opens file in new tab buffer
+" Plug 'romgrk/barbar.nvim' " tabview in nvim commented bcz may be causing lags or everytime opens file in new tab buffer
 " Plug 'itchyny/lightline.vim' " vim bottom bar
 " Plug 'scrooloose/nerdtree' " file system
 Plug 'kyazdani42/nvim-tree.lua' " file system build with lua
@@ -62,9 +63,7 @@ Plug 'tpope/vim-commentary' " vim comment link helper
 " |                     COLORSCHEMES                    |
 " +-----------------------------------------------------+ "
 Plug 'morhetz/gruvbox' " theme or colorscheme
-Plug 'fenetikm/falcon' " falcon colorscheme
 Plug 'ayu-theme/ayu-vim' " ayu colorscheme
-Plug 'cocopon/iceberg.vim' " iceberg colorscheme
 
 
 " +-----------------------------------------------------+ "

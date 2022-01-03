@@ -2,18 +2,18 @@ lua << EOF
 require'nvim-tree'.setup {
   disable_netrw       = true,
   hijack_netrw        = true,
-  open_on_setup       = true,
+  open_on_setup       = false,
   ignore_ft_on_setup  = {},
-  auto_close          = false,
+  auto_close          = true,
   open_on_tab         = false,
-  hijack_cursor       = false,
+  hijack_cursor       = true,
   update_cwd          = false,
   update_to_buf_dir   = {
-    enable = true,
+    enable = false,
     auto_open = true,
   },
   diagnostics = {
-    enable = false,
+    enable = true,
     icons = {
       hint = "",
       info = "",
@@ -40,11 +40,11 @@ require'nvim-tree'.setup {
     timeout = 500,
   },
   view = {
-    width = 30,
-    height = 30,
-    hide_root_folder = false,
+    width = 32,
+    height = 32,
+    hide_root_folder = true,
     side = 'left',
-    auto_resize = false,
+    auto_resize = true,
     mappings = {
       custom_only = false,
       list = {}
@@ -163,13 +163,12 @@ let g:nvim_tree_icons = {
     \   }
     \ }
 
-nnoremap <C-n> :NvimTreeToggle<CR>
 nnoremap <leader>r :NvimTreeRefresh<CR>
-nnoremap <leader>n :NvimTreeFindFile<CR>
-nnoremap <leader>N :NvimTreeToggle<CR>
+nnoremap <leader>N :NvimTreeFindFile<CR>
+nnoremap <leader>n :NvimTreeToggle<CR>
 " NvimTreeOpen, NvimTreeClose, NvimTreeFocus, NvimTreeFindFileToggle, and NvimTreeResize are also available if you need them
 
-set termguicolors " this variable must be enabled for colors to be applied properly
-
 " a list of groups can be found at `:help nvim_tree_highlight`
-highlight NvimTreeFolderIcon guibg=bluek
+highlight NvimTreeFolderIcon guibg=blue
+
+
