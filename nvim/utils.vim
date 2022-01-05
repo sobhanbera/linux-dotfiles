@@ -21,7 +21,11 @@ augroup SOBHAN_BERA
     autocmd filetype cpp nnoremap <F10> :terminal ./%:r<CR>
     autocmd filetype py,python nnoremap <F10> :terminal python %
     autocmd filetype js,javascript nnoremap <F10> !node %
+
+    " to update the filetype from typescript to typescriptreact when opened a tsx file
+    " same goes for the javascript file like jsx and so on...
+    autocmd BufEnter *.tsx :set filetype=typescriptreact
+    autocmd BufEnter *.jsx :set filetype=javascriptreact
 augroup END
 
 " nnoremap <F9> :!g++ -std=c++14 -Wshadow -Wall -o %:r %:r.cpp -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG<CR>
-
