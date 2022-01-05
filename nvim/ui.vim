@@ -23,5 +23,10 @@ colorscheme ayu " calling this after because by default the above line does not 
 
 hi Normal guibg=NONE
 hi CursorLine gui=NONE cterm=NONE
-highlight ColorColumn ctermbg=0 guibg=#3C3835  " highlight the column number
-highlight OverLength ctermbg=NONE ctermfg=NONE guibg=#000000 guifg=#ADFF2F " highlight the line that is too long
+hi ColorColumn ctermbg=0 guibg=#3C3835  " highlight the column number
+hi OverLength ctermbg=NONE ctermfg=NONE guibg=#000000 guifg=#ADFF2F " highlight the line that is too long
+
+hi DiagnosticError ctermbg=12 ctermfg=NONE guibg=NONE guifg=#F24B42
+hi DiagnosticWarn ctermbg=NONE ctermfg=NONE guibg=NONE guifg=#F5B439
+hi DiagnosticInfo ctermbg=NONE ctermfg=NONE guibg=NONE guifg=#AEFA47
+hi DiagnosticHint ctermbg=NONE ctermfg=NONE guibg=NONE guifg=#14BC85
