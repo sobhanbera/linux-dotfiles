@@ -97,6 +97,7 @@ Plug 'alvan/vim-closetag' " close tags
 Plug 'mattesgroeger/vim-bookmarks'
 Plug 'easymotion/vim-easymotion' " n and N was not working add this or remove the easymotion.vim plugin file. actually this plugin contains a map with n/N remove them so that you could navigate easily
 Plug 'psliwka/vim-smoothie' " smooth vim movements
+Plug 'farmergreg/vim-lastplace' " vim lastplace help to directly edit the last position of any file
 
 
 " +-----------------------------------------------------+ "

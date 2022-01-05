@@ -26,6 +26,7 @@ set splitright splitbelow
 set cursorline
 set foldmethod=manual
 set completeopt-=preview " For No Previews
+set textwidth=120
 
 set guicursor=i:ver25-iCursor-blinkwait700-blinkon400-blinkoff250 " This will set the vim cursor to verical and also blink
 
