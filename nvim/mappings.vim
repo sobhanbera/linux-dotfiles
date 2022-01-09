@@ -59,10 +59,10 @@ set backspace=indent,eol,start whichwrap+=<,>,[,]
 " Moving lines of text from one position to adjacent line position
 vnoremap J :m '>+1<CR>gv=gv
 vnoremap K :m '<-2<CR>gv=gv
-inoremap <C-j> <esc>:m .+1m<CR>==
-inoremap <C-k> <esc>:m .-2m<CR>==
-nnoremap <leader>K :m .-2<CR>==
-nnoremap <leader>J :m .+1<CR>==
+inoremap <C-j> <esc>:m .+1m<CR>==a
+inoremap <C-k> <esc>:m .-2m<CR>==a
+nnoremap J :m .+1<CR>==
+nnoremap K :m .-2<CR>==
 
 " Undo breaks throughout any code characters
 inoremap \@ \@<c-g>u
@@ -71,6 +71,7 @@ inoremap \+ \+<c-g>u
 inoremap , ,<c-g>u
 inoremap . .<c-g>u
 inoremap / /<c-g>u
+inoremap : :<c-g>u
 
 " mutation of Jumplist
 nnoremap <expr> k (v:count > 5 ? "m'" . v:count : "") . 'k'
@@ -81,12 +82,13 @@ nnoremap n nzzzv
 nnoremap N Nzzzv
 nnoremap * *zzzv
 nnoremap # #zzzv
-nnoremap J msJ`s
 
 " sessions helper mappings
 nnoremap <leader>mks :mks! nvim-session.sobhanbera
 
 " mappings for copy and paste purpose...
+" below are some of the developer specific shortcuts...
+" just to fasten the coding proccess much more...
 vnoremap y "+y
 nnoremap Y y$
 nnoremap y "+yg
@@ -95,3 +97,13 @@ nnoremap p "+p
 nnoremap P "+P
 vnoremap d "+x
 nnoremap dd "+dd
+" when pressed D not just delete it but also save it to register
+nnoremap D v$"+x
+" same as above but deleting some different part of the file
+nnoremap dG VG"+x
+" normally when I have pressed v in normal mode I should go to full line visual mode when pressed v again
+vnoremap v V
+" same as above but in normal mode - indirectly just doing exactly the same, you can say just an alternative
+nnoremap vv V
+" like any other capital letter command
+nnoremap V v$

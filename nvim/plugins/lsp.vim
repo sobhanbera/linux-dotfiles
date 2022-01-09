@@ -4,59 +4,45 @@
 
 let g:completion_matching_strategy_list=['exact', 'substring', 'fuzzy'] " to use this strategy...
 lua << EOF
-local nvim_lsp = require('lspconfig')
+local nvim_lsp = require('lspconfig')                                   -- official lsp config :)
+local cmp = require('cmp')                                              -- completion plugin
+local lspkind = require('lspkind')                                      -- lsp kind icons for completion menu
 
--- Use an on_attach function to only map the following keys
--- after the language server attaches to the current buffer
+-- " +-----------------------------------------------------+ "
+-- " |                LSP SIGNATURE CONFIG                 |
+-- " +-----------------------------------------------------+ "
 local on_attach = function(client, bufnr)
-    -- " +-----------------------------------------------------+ "
-    -- " |                LSP SIGNATURE CONFIG                 |
-    -- " +-----------------------------------------------------+ "
     cfg = {
-        debug = false, -- set to true to enable debug logging
-        log_path = "debug_log_file_path", -- debug log path
-        verbose = false, -- show debug line number
-
-        bind = true, -- This is mandatory, otherwise border config won't get registered.
-                    -- If you want to hook lspsaga or other signature handler, pls set to false
-        doc_lines = 10, -- will show two lines of comment/doc(if there are more than two lines in doc, will be truncated);
-                        -- set to 0 if you DO NOT want any API comments be shown
-                        -- This setting only take effect in insert mode, it does not affect signature help in normal
-                        -- mode, 10 by default
-
-        floating_window = true, -- show hint in a floating window, set to false for virtual text only mode
-
-        floating_window_above_cur_line = true, -- try to place the floating above the current line when possible Note:
-        -- will set to true when fully tested, set to false will use whichever side has more space
-        -- this setting will be helpful if you do not want the PUM and floating win overlap
-        fix_pos = false,  -- set to true, the floating window will not auto-close until finish all parameters
-        hint_enable = true, -- virtual hint enable
-        hint_prefix = "🐼 ",  -- Panda for parameter
+        debug = true,
+        log_path = "debug_log_file_path",
+        verbose = false,
+        bind = true,
+        doc_lines = 10,
+        floating_window = true,
+        floating_window_above_cur_line = true,
+        fix_pos = false,
+        hint_enable = true,
+        hint_prefix = "🐼 ",
         hint_scheme = "String",
-        use_lspsaga = false,  -- set to true if you want to use lspsaga popup
-        hi_parameter = "LspSignatureActiveParameter", -- how your parameter will be highlight
-        max_height = 12, -- max height of signature floating_window, if content is more than max_height, you can scroll down
-                        -- to view the hiding contents
-        max_width = 120, -- max_width of signature floating_window, line will be wrapped if exceed max_width
+        use_lspsaga = false,
+        hi_parameter = "LspSignatureActiveParameter",
+        max_height = 12,
+        max_width = 120,
         handler_opts = {
-            border = "rounded"   -- double, rounded, single, shadow, none
+            border = "rounded"
         },
-
-        always_trigger = false, -- sometime show signature on new line or in middle of parameter can be confusing, set it to false for #58
-
-        auto_close_after = nil, -- autoclose signature float win after x sec, disabled if nil.
-        extra_trigger_chars = {}, -- Array of extra characters that will trigger signature completion, e.g., {"(", ","}
-        zindex = 200, -- by default it will be on top of all floating windows, set to <= 50 send it to bottom
-
-        padding = '', -- character to pad on left and right of signature can be ' ', or '|'  etc
-
-        transparency = nil, -- disabled by default, allow floating win transparent value 1~100
-        shadow_blend = 36, -- if you using shadow as border use this set the opacity
-        shadow_guibg = 'Black', -- if you using shadow as border use this set the color e.g. 'Green' or '#121315'
-        timer_interval = 200, -- default timer check interval set to lower value if you want to reduce latency
-        toggle_key = nil -- toggle signature on and off in insert mode,  e.g. toggle_key = '<M-x>'
+        always_trigger = false,
+        auto_close_after = 20,
+        extra_trigger_chars = {},
+        zindex = 50,
+        padding = ' ',
+        transparency = 100,
+        shadow_blend = 36,
+        shadow_guibg = '#0a0f14',
+        timer_interval = 200,
+        toggle_key = '<C-Space>'
     }
-    require'lsp_signature'.setup(cfg) -- no need to specify bufnr if you don't use toggle_key
+    require'lsp_signature'.setup(cfg)
     require'lsp_signature'.on_attach(cfg, bufnr)
 
     local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
@@ -71,7 +57,7 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
     buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
     buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-    -- buf_set_keymap('n', '<C-m>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    buf_set_keymap('n', '<C-m>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
     buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
     buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
     buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
@@ -79,6 +65,9 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
     buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     buf_set_keymap('n', '<space>gf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+
+    local default_opts = { noremap = true, silent = true, expr = true }
+    vim.api.nvim_set_keymap('i', '<C-Space>', [[ compe#complete() ]], default_opts)
 
     -- if client.resolved_capabilities.document_formatting then
     --     vim.cmd [[augroup Format]]
@@ -91,6 +80,141 @@ local on_attach = function(client, bufnr)
 end
 
 -- " +-----------------------------------------------------+ "
+-- " |                LSP KIND ICON CONFIG                 |
+-- " +-----------------------------------------------------+ "
+lspkind.init({
+    with_text = true,
+    preset = 'codicons',
+    symbol_map = {
+        Text = " ",
+        Method = " ",
+        Function = " ",
+        Constructor = " ",
+        Field = "ﰠ ",
+        Variable = " ",
+        Class = "ﴯ ",
+        Interface = " ",
+        Module = " ",
+        Property = "ﰠ ",
+        Unit = "塞 ",
+        Value = " ",
+        Enum = " ",
+        Keyword = " ",
+        Snippet = " ",
+        Color = " ",
+        File = " ",
+        Reference = " ",
+        Folder = " ",
+        EnumMember = " ",
+        Constant = " ",
+        Struct = "פּ ",
+        Event = " ",
+        Operator = " ",
+        TypeParameter = ""
+    },
+})
+
+-- " +-----------------------------------------------------+ "
+-- " |                  NVIM CMP CONFIGS                   |
+-- " +-----------------------------------------------------+ "
+cmp.setup({
+    snippet = {
+        expand = function(args)
+            vim.fn["UltiSnips#Anon"](args.body)
+        end,
+    },
+    mapping = {
+        ["<C-d>"] = cmp.mapping.scroll_docs(-4),
+        ["<C-f>"] = cmp.mapping.scroll_docs(4),
+        ["<C-e>"] = cmp.mapping.close(),
+        ["<CR>"] = cmp.mapping(
+            cmp.mapping.confirm {
+                behavior = cmp.ConfirmBehavior.Insert,
+                select = true,
+            },
+            { "i", "c" }
+        ),
+        ["<c-space>"] = cmp.mapping {
+            i = cmp.mapping.complete(),
+            c = function(
+                _ --[[fallback]]
+            )
+                if cmp.visible() then
+                if not cmp.confirm { select = true } then
+                    return
+                end
+                else
+                cmp.complete()
+                end
+            end,
+        },
+    },
+    sources = {
+        { name = "nvim_lsp" },
+        { name = "nvim_lua" },
+        { name = "path" },
+        { name = "ultisnips", keyword_length = 3 },
+        { name = "buffer", keyword_length = 4 },
+    },
+    experimental = {
+        native_menu = false,
+        ghost_text = true,
+    },
+    sorting = {
+        comparators = {
+            cmp.config.compare.offset,
+            cmp.config.compare.exact,
+            cmp.config.compare.score,
+
+            function(entry1, entry2)
+                local _, entry1_under = entry1.completion_item.label:find "^_+"
+                local _, entry2_under = entry2.completion_item.label:find "^_+"
+                entry1_under = entry1_under or 0
+                entry2_under = entry2_under or 0
+                if entry1_under > entry2_under then
+                return false
+                elseif entry1_under < entry2_under then
+                return true
+                end
+            end,
+
+            cmp.config.compare.kind,
+            cmp.config.compare.sort_text,
+            cmp.config.compare.length,
+            cmp.config.compare.order,
+        },
+    },
+    formatting = {
+        format = lspkind.cmp_format {
+            with_text = true,
+            menu = {
+                buffer = "[BUF]",
+                nvim_lsp = "[LSP]",
+                nvim_lua = "[API]",
+                path = "[PATH]",
+                ultisnips = "[SNIP]",
+            },
+        },
+    },
+})
+
+-- Use buffer source for `/` & `:` (if `native_menu` is enabled both the below won't work anymore).
+cmp.setup.cmdline('/', {
+    sources = {
+        { name = 'buffer' }
+    }
+})
+cmp.setup.cmdline(':', {
+    sources = cmp.config.sources({
+        { name = 'path' }
+    }, {
+        { name = 'cmdline' }
+    })
+})
+
+local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
+
+-- " +-----------------------------------------------------+ "
 -- " |                 ATTACHING DIFF LSs                  |
 -- " |                  LANGUAGE SERVERS                   |
 -- " +-----------------------------------------------------+ "
@@ -100,11 +224,11 @@ for _, lsp in ipairs(servers) do
         on_attach = on_attach,
         flags = {
             debounce_text_changes = 150,
-        }
+        },
+        capabilities = capabilities
     }
 end
 EOF
-
 
 
 " +-----------------------------------------------------+ "
@@ -139,6 +263,7 @@ require('telescope').setup {
 
 require("telescope").load_extension("fzy_native")
 EOF
+
 " git files
 nnoremap <leader>f <cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown({ prompt_title = "< Find Git File >" }))<CR>
 " find any file
@@ -153,16 +278,17 @@ nnoremap <leader>' <cmd>lua require('telescope.builtin').marks(require('telescop
 nnoremap <leader>/ <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ prompt_title = "< Find Text In Current File >" }))<CR>
 " find buffer
 nnoremap ; <cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({ prompt_title = "< Search Buffers >" }))<cr>
+" formmating a file when saved
+autocmd BufWritePre *.js,*.ts,*.tsx,*.jsx lua vim.lsp.buf.formatting_seq_sync()
 
 
 " +-----------------------------------------------------+ "
 " |  SOME FILE/PROJECT SPECIFIC TELESCOPE CONFIG        |
 " +-----------------------------------------------------+ "
- " search files in vim config folder
+" search files in vim config folder
 nnoremap <leader>vim <cmd>lua require("telescope.builtin").find_files(require('telescope.themes').get_dropdown({ prompt_title = "< Find Vim Config File >", cwd = '~/.config/nvim', hidden = true, theme}))<CR>
 " search files in CP
 nnoremap <leader>co <cmd>lua require("telescope.builtin").find_files(require('telescope.themes').get_dropdown({ prompt_title = "< Find Vim Config File >", cwd = '~/Documents/Codes', hidden = true, theme}))<CR>
-
 
 
 " +-----------------------------------------------------+ "
@@ -177,8 +303,19 @@ require("indent_blankline").setup {
 }
 EOF
 
-
-
-" +-----------------------------------------------------+ "
-" |     INDENT BLANK LINE PLUGIN CONFIG                 |
-" +-----------------------------------------------------+ "
+" highlights
+highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080
+highlight! CmpItemAbbrMatch guibg=NONE guifg=#14BC85
+highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#14BC85
+highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE
+highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE
+highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE
+highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0
+highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0
+highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4
+highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4
+highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4
+highlight! Pmenu guibg=NONE
+highlight! PmenuSel guibg=#000000 guifg=#14BC85
+highlight! PmenuSbar guibg=NONE
+highlight! PmenuThumb guibg=#14BC85
