@@ -1,13 +1,12 @@
-
 # Creates a React component class with ES7 module system and TypeScript interfaces
 snippet tsrcc "Creates a React component class with ES7 module system and TypeScript interfaces" b
 import React, { Component } from 'react'
 
 interface Props {
-	
+
 }
 interface State {
-	
+
 }
 
 export default class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {
@@ -29,10 +28,10 @@ snippet tsrce "Creates a React component class with ES7 module system and TypeSc
 import React, { Component } from 'react'
 
 interface Props {
-	
+
 }
 interface State {
-	
+
 }
 
 class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {
@@ -56,7 +55,7 @@ snippet tsrfce "Creates a React Functional Component with ES7 module system and 
 import React, { ReactElement } from 'react'
 
 interface Props {
-	
+
 }
 
 function ${1:${TM_FILENAME_BASE}}({}: Props): ReactElement {
@@ -76,7 +75,7 @@ snippet tsrfc "Creates a React Functional Component with ES7 module system and T
 import React, { ReactElement } from 'react'
 
 interface Props {
-	
+
 }
 
 export default function ${1:${TM_FILENAME_BASE}}({}: Props): ReactElement {
@@ -94,7 +93,7 @@ snippet tsrafce "Creates a React Arrow Function Component with ES7 module system
 import React from 'react'
 
 interface Props {
-	
+
 }
 
 const ${1:${TM_FILENAME_BASE}} = (props: Props) => {
@@ -114,7 +113,7 @@ snippet tsrafc "Creates a React Arrow Function Component with ES7 module system 
 import React from 'react'
 
 interface Props {
-	
+
 }
 
 export const ${1:${TM_FILENAME_BASE}} = (props: Props) => {
@@ -132,7 +131,7 @@ snippet tsrpc "Creates a React pure component class with ES7 module system and T
 import React, { PureComponent } from 'react'
 
 interface Props {
-	
+
 }
 
 export default class ${1:${TM_FILENAME_BASE}} extends PureComponent<Props> {
@@ -152,7 +151,7 @@ snippet tsrpce "Creates a React pure component class with ES7 module system and 
 import React, { PureComponent } from 'react'
 
 interface Props {
-	
+
 }
 
 class ${1:${TM_FILENAME_BASE}} extends PureComponent<Props> {
@@ -174,7 +173,7 @@ snippet tsrmc "Creates a React Memo Function Component with ES7 module system an
 import React, { memo } from 'react'
 
 interface Props {
-	
+
 }
 
 export default memo(function ${1:${TM_FILENAME_BASE}}({}: Props) {
@@ -193,10 +192,10 @@ import React, { Component } from 'react'
 import { connect } from 'react-redux'
 
 interface Props {
-	
+
 }
 interface State {
-	
+
 }
 
 export class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {
@@ -212,11 +211,11 @@ export class ${1:${TM_FILENAME_BASE}} extends Component<Props, State> {
 }
 
 const mapStateToProps = (state) => ({
-	
+
 })
 
 const mapDispatchToProps = {
-	
+
 }
 
 export default connect(mapStateToProps, mapDispatchToProps)(${1:${TM_FILENAME_BASE}})
@@ -229,7 +228,7 @@ import React from 'react'
 import { View, Text } from 'react-native'
 
 interface Props {
-	
+
 }
 
 const ${1:${TM_FILENAME_BASE}} = (props: Props) => {
@@ -250,7 +249,7 @@ import React from 'react'
 import { View } from 'react-native'
 
 interface ${1:${TM_FILENAME_BASE}}Props {
-	
+
 }
 
 const ${1:${TM_FILENAME_BASE}}: React.FunctionComponent<${1:${TM_FILENAME_BASE}}Props> = (props) => {
@@ -271,7 +270,7 @@ import React from 'react'
 import { StyleSheet, Text, View } from 'react-native'
 
 interface Props {
-	
+
 }
 
 const ${1:${TM_FILENAME_BASE}} = (props: Props) => {
