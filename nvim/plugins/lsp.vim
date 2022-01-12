@@ -66,9 +66,6 @@ local on_attach = function(client, bufnr)
     buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
     buf_set_keymap('n', '<space>gf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
-    local default_opts = { noremap = true, silent = true, expr = true }
-    vim.api.nvim_set_keymap('i', '<C-Space>', [[ compe#complete() ]], default_opts)
-
     -- if client.resolved_capabilities.document_formatting then
     --     vim.cmd [[augroup Format]]
     --     vim.cmd [[autocmd! * <buffer>]]
@@ -199,7 +196,7 @@ cmp.setup({
 })
 
 -- Use buffer source for `/` & `:` (if `native_menu` is enabled both the below won't work anymore).
-cmp.setup.cmdline('/', {
+--[[ cmp.setup.cmdline('/', {
     sources = {
         { name = 'buffer' }
     }
@@ -211,6 +208,7 @@ cmp.setup.cmdline(':', {
         { name = 'cmdline' }
     })
 })
+]]--
 
 local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -218,7 +216,7 @@ local capabilities = require('cmp_nvim_lsp').update_capabilities(vim.lsp.protoco
 -- " |                 ATTACHING DIFF LSs                  |
 -- " |                  LANGUAGE SERVERS                   |
 -- " +-----------------------------------------------------+ "
-local servers = { 'tsserver', 'pyright', 'html', 'emmet_ls', 'vimls', 'eslint', 'dockerls', 'jsonls', 'emmet_ls'} --, 'cssmodules_ls'}
+local servers = { 'tsserver', 'pyright', 'html', 'cssls', 'emmet_ls', 'vimls', 'eslint', 'dockerls', 'jsonls', 'emmet_ls'} --, 'cssmodules_ls'}
 for _, lsp in ipairs(servers) do
     nvim_lsp[lsp].setup {
         on_attach = on_attach,

@@ -101,9 +101,5 @@ nnoremap dd "+dd
 nnoremap D v$"+x
 " same as above but deleting some different part of the file
 nnoremap dG VG"+x
-" normally when I have pressed v in normal mode I should go to full line visual mode when pressed v again
-vnoremap v V
-" same as above but in normal mode - indirectly just doing exactly the same, you can say just an alternative
-nnoremap vv V
 " like any other capital letter command
 nnoremap V v$

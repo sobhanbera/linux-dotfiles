@@ -55,7 +55,7 @@ Plug 'terryma/vim-multiple-cursors'                                        " CTR
 Plug 'szw/vim-maximizer'                                                   " window maximizer
 Plug 'preservim/tagbar'                                                    " Tagbar for code navigation
 Plug 'mhinz/vim-startify'                                                  " vim start window UI provider
-Plug 'http://github.com/tpope/vim-surround'                                " Surrounding ysw)
+Plug 'tpope/vim-surround'                                " Surrounding ysw)
 Plug 'tpope/vim-commentary'                                                " vim comment link helper
 
 

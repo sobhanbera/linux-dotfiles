@@ -18,9 +18,9 @@ require('bufferline').setup {
         return vim.fn.fnamemodify(buf.name, ':t:r')
       end
     end,
-    max_name_length = 30,
-    max_prefix_length = 15,
-    tab_size = 20,
+    max_name_length = 35,
+    max_prefix_length = 18,
+    tab_size = 22,
     diagnostics = "nvim_lsp",
     diagnostics_update_in_insert = false,
     diagnostics_indicator = function(count, level, diagnostics_dict, context)

@@ -29,3 +29,4 @@ augroup SOBHAN_BERA
 augroup END
 
 " nnoremap <F9> :!g++ -std=c++14 -Wshadow -Wall -o %:r %:r.cpp -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG<CR>
+
