@@ -101,5 +101,3 @@ nnoremap dd "+dd
 nnoremap D v$"+x
 " same as above but deleting some different part of the file
 nnoremap dG VG"+x
-" like any other capital letter command
-nnoremap V v$

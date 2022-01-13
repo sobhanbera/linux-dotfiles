@@ -114,7 +114,7 @@ Plug 'quangnguyen30192/cmp-nvim-ultisnips'                                 " req
 " +-----------------------------------------------------+ "
 " |                 TESTING & DEBUGGING                 |
 " +-----------------------------------------------------+ "
-Plug 'puremourning/vimspector'                                             " debugger
+" Plug 'puremourning/vimspector'                                             " debugger
 " Plug 'janko/vim-test'                                                    " testing
 
 

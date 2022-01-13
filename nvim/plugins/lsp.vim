@@ -13,7 +13,7 @@ local lspkind = require('lspkind')                                      -- lsp k
 -- " +-----------------------------------------------------+ "
 local on_attach = function(client, bufnr)
     cfg = {
-        debug = true,
+        debug = false,
         log_path = "debug_log_file_path",
         verbose = false,
         bind = true,

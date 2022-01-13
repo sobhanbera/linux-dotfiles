@@ -78,8 +78,8 @@ require('bufferline').setup {
 EOF
 
 " Move to previous/next
-nnoremap <silent>    <A-h> :BufferLineCyclePrev<CR>
-nnoremap <silent>    <A-l> :BufferLineCycleNext<CR>
+nnoremap <silent>    <A-d> :BufferLineCyclePrev<CR>
+nnoremap <silent>    <A-f> :BufferLineCycleNext<CR>
 " Re-order to previous/next
 nnoremap <silent>    <A-<> :BufferLineMovePrev<CR>
 nnoremap <silent>    <A->> :BufferLineMoveNext<CR>
