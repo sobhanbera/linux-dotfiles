@@ -99,6 +99,7 @@ Plug 'psliwka/vim-smoothie'                                                " smo
 Plug 'farmergreg/vim-lastplace'                                            " vim lastplace help to directly edit the last position of any file
 Plug 'alvan/vim-closetag'                                                  " auto close tags like html
 Plug 'machakann/vim-sandwich'                                              " surrounds text
+Plug 'Chiel92/vim-autoformat'
 
 
 " +-----------------------------------------------------+ "
