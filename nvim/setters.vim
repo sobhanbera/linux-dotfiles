@@ -12,7 +12,7 @@ set nowrap
 set noswapfile nobackup undofile
 set undodir=~/.config/nvim/undodir
 set smartcase ignorecase
-set incsearch nohlsearch
+set incsearch hlsearch
 set hidden
 set history=10000
 set termguicolors
@@ -29,5 +29,4 @@ set completeopt-=preview " For No Previews
 set textwidth=120 " single line width limit
 set whichwrap=lh " when starting of line press h to move to the above line and below for l
 
-set guicursor=i:ver25-iCursor-blinkwait700-blinkon400-blinkoff250 " This will set the vim cursor to verical and also blink
-
+" set guicursor=i:ver25-iCursor-blinkwait700-blinkon400-blinkoff250 " This will set the vim cursor to verical and also blink
