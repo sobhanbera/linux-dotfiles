@@ -32,12 +32,12 @@ function! s:getAllFilesSecondLevel()
 endfunction
 
 let g:startify_lists = [
-        \ { 'type': 'dir',                                    'header': ['   Project - '. getcwd()]    },
-        \ { 'type': 'files',                                  'header': ['   Recents']               },
-        \ { 'type': 'sessions',                               'header': ['   Sessions']              },
-        \ { 'type': 'bookmarks',                              'header': ['   Bookmarks']             },
-        \ { 'type': function('s:gitModified'),                'header': ['   Git Modified -']          },
-        \ { 'type': function('s:gitUntracked'),               'header': ['   Git Untracked -']         },
-        \ { 'type': function('s:getAllFilesFirstLevel'),      'header': ['   L-1...']     },
-        \ { 'type': 'commands',                               'header': ['   Commands']              },
-        \ ]
+            \ { 'type': 'dir',                                    'header': ['   Project - '. getcwd()]    },
+            \ { 'type': 'files',                                  'header': ['   Recents']               },
+            \ { 'type': 'sessions',                               'header': ['   Sessions']              },
+            \ { 'type': 'bookmarks',                              'header': ['   Bookmarks']             },
+            \ { 'type': function('s:gitModified'),                'header': ['   Git Modified -']          },
+            \ { 'type': function('s:gitUntracked'),               'header': ['   Git Untracked -']         },
+            \ { 'type': 'commands',                               'header': ['   Commands']              },
+            \ ]
+" \ { 'type': function('s:getAllFilesFirstLevel'),      'header': ['   L-1...']     },

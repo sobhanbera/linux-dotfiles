@@ -100,6 +100,7 @@ Plug 'farmergreg/vim-lastplace'                                            " vim
 Plug 'alvan/vim-closetag'                                                  " auto close tags like html
 Plug 'machakann/vim-sandwich'                                              " surrounds text
 Plug 'Chiel92/vim-autoformat'
+Plug 'junegunn/goyo.vim'
 
 
 " +-----------------------------------------------------+ "
