@@ -12,68 +12,66 @@ local lspkind = require('lspkind')                                      -- lsp k
 -- " |                LSP SIGNATURE CONFIG                 |
 -- " +-----------------------------------------------------+ "
 local on_attach = function(client, bufnr)
-cfg = {
-    debug = false,
-    log_path = "debug_log_file_path",
-    verbose = false,
-    bind = true,
-    doc_lines = 10,
-    floating_window = true,
-    floating_window_above_cur_line = true,
-    fix_pos = false,
-    hint_enable = true,
-    hint_prefix = "🐼 ",
-    hint_scheme = "String",
-    use_lspsaga = false,
-    hi_parameter = "LspSignatureActiveParameter",
-    max_height = 12,
-    max_width = 120,
-    handler_opts = {
-        border = "rounded"
-        },
-    always_trigger = false,
-    auto_close_after = 20,
-    extra_trigger_chars = {},
-    zindex = 50,
-    padding = ' ',
-    transparency = 100,
-    shadow_blend = 36,
-    shadow_guibg = '#0a0f14',
-    timer_interval = 200,
-    toggle_key = '<C-Space>'
-    }
-require'lsp_signature'.setup(cfg)
-require'lsp_signature'.on_attach(cfg, bufnr)
+    cfg = {
+        debug = false,
+        log_path = "debug_log_file_path",
+        verbose = false,
+        bind = true,
+        doc_lines = 10,
+        floating_window = true,
+        floating_window_above_cur_line = true,
+        fix_pos = false,
+        hint_enable = true,
+        hint_prefix = "🐼 ",
+        hint_scheme = "String",
+        use_lspsaga = false,
+        hi_parameter = "LspSignatureActiveParameter",
+        max_height = 12,
+        max_width = 120,
+        handler_opts = {
+            border = "rounded"
+            },
+        always_trigger = false,
+        auto_close_after = 20,
+        extra_trigger_chars = {},
+        zindex = 50,
+        padding = ' ',
+        transparency = 100,
+        shadow_blend = 36,
+        shadow_guibg = '#0a0f14',
+        timer_interval = 200,
+        toggle_key = '<C-Space>'
+        }
+    require'lsp_signature'.setup(cfg)
+    require'lsp_signature'.on_attach(cfg, bufnr)
 
-local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
-local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
+    local function buf_set_keymap(...) vim.api.nvim_buf_set_keymap(bufnr, ...) end
+    local function buf_set_option(...) vim.api.nvim_buf_set_option(bufnr, ...) end
 
--- " +-----------------------------------------------------+ "
--- " |                        MAPPINGS                     |
--- " +-----------------------------------------------------+ "
-buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
-local opts = { noremap=true, silent=true }
-buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
-buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
-buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
-buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
-buf_set_keymap('n', '<C-m>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
-buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
-buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
-buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
-buf_set_keymap('n', '<space>dd', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
-buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
-buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
-buf_set_keymap('n', '<space>gf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
+    -- " +-----------------------------------------------------+ "
+    -- " |                        MAPPINGS                     |
+    -- " +-----------------------------------------------------+ "
+    buf_set_option('omnifunc', 'v:lua.vim.lsp.omnifunc')
+    local opts = { noremap=true, silent=true }
+    buf_set_keymap('n', 'gD', '<cmd>lua vim.lsp.buf.declaration()<CR>', opts)
+    buf_set_keymap('n', 'gd', '<cmd>lua vim.lsp.buf.definition()<CR>', opts)
+    buf_set_keymap('n', 'K', '<cmd>lua vim.lsp.buf.hover()<CR>', opts)
+    buf_set_keymap('n', 'gi', '<cmd>lua vim.lsp.buf.implementation()<CR>', opts)
+    buf_set_keymap('n', '<C-m>', '<cmd>lua vim.lsp.buf.signature_help()<CR>', opts)
+    buf_set_keymap('n', '<space>D', '<cmd>lua vim.lsp.buf.type_definition()<CR>', opts)
+    buf_set_keymap('n', '<space>rn', '<cmd>lua vim.lsp.buf.rename()<CR>', opts)
+    buf_set_keymap('n', 'gr', '<cmd>lua vim.lsp.buf.references()<CR>', opts)
+    buf_set_keymap('n', '<space>dd', '<cmd>lua vim.diagnostic.open_float()<CR>', opts)
+    buf_set_keymap('n', '[d', '<cmd>lua vim.diagnostic.goto_prev()<CR>', opts)
+    buf_set_keymap('n', ']d', '<cmd>lua vim.diagnostic.goto_next()<CR>', opts)
+    buf_set_keymap('n', '<space>gf', '<cmd>lua vim.lsp.buf.formatting()<CR>', opts)
 
--- if client.resolved_capabilities.document_formatting then
---     vim.cmd [[augroup Format]]
---     vim.cmd [[autocmd! * <buffer>]]
---     vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]]
---     vim.cmd [[augroup END]]
--- else
---     echo 'NOT'
--- end
+    -- if client.resolved_capabilities.document_formatting then
+    --     vim.cmd [[augroup Format]]
+    --     vim.cmd [[autocmd! * <buffer>]]
+    --     vim.cmd [[autocmd BufWritePre <buffer> lua vim.lsp.buf.formatting()]]
+    --     vim.cmd [[augroup END]]
+    -- end
 end
 
 -- " +-----------------------------------------------------+ "
@@ -275,11 +273,11 @@ nnoremap <leader>' <cmd>lua require('telescope.builtin').marks(require('telescop
 " find in current buffer or opened file
 nnoremap <leader>/ <cmd>lua require('telescope.builtin').current_buffer_fuzzy_find(require('telescope.themes').get_dropdown({ prompt_title = "< Find Text In Current File >" }))<CR>
 " find buffer
-nnoremap ; <cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({ prompt_title = "< Search Buffers >" }))<cr>
+nnoremap <leader>bf <cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_dropdown({ prompt_title = "< Search Buffers >" }))<cr>
 
 " formmating a file when saved
 " autocmd BufWritePre *.js,*.ts,*.tsx,*.jsx lua vim.lsp.buf.formatting_seq_sync()
-au BufWrite * :Autoformat
+" au BufWrite * :Autoformat
 " above formatter is faster than I thought and the config for same is below...
 
 " +-----------------------------------------------------+ "
@@ -290,6 +288,16 @@ nnoremap <leader>vim <cmd>lua require("telescope.builtin").find_files(require('t
 " search files in CP
 nnoremap <leader>co <cmd>lua require("telescope.builtin").find_files(require('telescope.themes').get_dropdown({ prompt_title = "< Find Vim Config File >", cwd = '~/Documents/Codes', hidden = true, theme}))<CR>
 
+lua << EOF
+local builtins = require("null-ls.builtins")
+local formatting = builtins.formatting
+formatting.prettier.with({
+	command = "prettier",
+	args = {"--stdin-filepath", "$FILENAME"},
+    extra_args = { "--no-semi", "--single-quote", "--jsx-single-quote", "--trailing-comma", "--bracket-same-line", "--html-whitespace-sensitivity", "--prose-wrap" },
+})
+EOF
+autocmd BufWritePost *.tsx lua vim.lsp.buf.formatting()
 
 " +-----------------------------------------------------+ "
 " |     INDENT BLANK LINE PLUGIN CONFIG                 |

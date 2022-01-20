@@ -1,3 +1,0 @@
-let l:bm_file_version = 1
-let l:bm_sessions = {'default': {'/home/sobhanbera/.config/nvim/plugins.vim': [{'sign_idx': 9500, 'line_nr': 2, 'content': '" |                        PLUGINS                      |'},],}}
-let l:bm_current_session = 'default'

@@ -5,7 +5,6 @@ call plug#begin()
 " +-----------------------------------------------------+ "
 " |           LSP PLUGINS & AUTOCOMPLETE                |
 " +-----------------------------------------------------+ "
-" Plug 'neoclide/coc.nvim'                                                 " Auto Completion & File Formatter
 Plug 'neovim/nvim-lspconfig'                                               " NVIM LSP CONFIG
 Plug 'glepnir/lspsaga.nvim'                                                " saga for lsp to show popup msgs
 
@@ -26,6 +25,7 @@ Plug 'ray-x/lsp_signature.nvim'                                            " mai
 Plug 'nvim-lualine/lualine.nvim'                                           " statusbar structure update ui
 Plug 'akinsho/bufferline.nvim'                                             " ui
 Plug 'onsails/lspkind-nvim'                                                " auto complete menu icons
+Plug 'jose-elias-alvarez/null-ls.nvim'
 
 
 " +-----------------------------------------------------+ "
@@ -37,13 +37,8 @@ Plug 'github/copilot.vim'                                                  " The
 " +-----------------------------------------------------+ "
 " |                    UI COMPONENTS                    |
 " +-----------------------------------------------------+ "
-" Plug 'romgrk/barbar.nvim'                                                " tabview in nvim commented bcz may be causing lags or everytime opens file in new tab buffer
-" Plug 'itchyny/lightline.vim'                                             " vim bottom bar
-" Plug 'scrooloose/nerdtree'                                               " file system
 Plug 'kyazdani42/nvim-tree.lua'                                            " file system build with lua
 Plug 'Xuyuanp/nerdtree-git-plugin'                                         " git plugin for nerdtree nvim
-" Plug 'tiagofumo/vim-nerdtree-syntax-highlight'                           " NERD TREE better highligher
-" " Plug 'kassio/neoterm'                                                  " terminal for vim
 Plug 'kyazdani42/nvim-web-devicons'                                        " required for tab plugin
 Plug 'ryanoasis/vim-devicons'                                              " Developer Icons seperate
 Plug 'lukas-reineke/indent-blankline.nvim'                                 " indentation for blank lines
@@ -72,11 +67,10 @@ Plug 'ayu-theme/ayu-vim'                                                   " ayu
 " " Plug 'ap/vim-css-color'                                                " css colors more faster than the below plugin
 Plug 'lilydjwg/colorizer'                                                  " highlight where every color hash or code is found in the entire codebase or files
 " " Plug 'frazrepo/vim-rainbow'                                            " new rainbow brackets
-" Plug 'kien/rainbow_parentheses.vim'                                      " old rainbow brackets
 " Plug 'leafgarland/typescript-vim'                                        " typescript for vim
 " Plug 'peitalin/vim-jsx-typescript'                                       " jsx + ts
 " Plug 'lifepillar/pgsql.vim'                                              " sql syntax
-" " Plug 'itchyny/vim-cursorword'                                          " highlight all words that are matching the word at cursor
+Plug 'itchyny/vim-cursorword'                                          " highlight all words that are matching the word at cursor
 
 
 " +-----------------------------------------------------+ "
@@ -99,7 +93,6 @@ Plug 'psliwka/vim-smoothie'                                                " smo
 Plug 'farmergreg/vim-lastplace'                                            " vim lastplace help to directly edit the last position of any file
 Plug 'alvan/vim-closetag'                                                  " auto close tags like html
 Plug 'machakann/vim-sandwich'                                              " surrounds text
-Plug 'Chiel92/vim-autoformat'
 Plug 'junegunn/goyo.vim'
 
 
