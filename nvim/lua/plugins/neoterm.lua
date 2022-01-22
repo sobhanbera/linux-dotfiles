@@ -1,0 +1,10 @@
+vim.g.neoterm_default_mod = 'vertical'
+vim.g.neoterm_size = 50
+vim.g.neoterm_autoinsert = 1
+vim.g.neoterm_autoscroll = 1
+vim.g.neoterm_term_per_tab = 1
+map('i', '<c-e>', '<Esc>:Ttoggle<CR>')
+map('t', '<c-e>', '<c-\\><c-n>:Ttoggle<CR>')
+map('n', '<c-e>', '<Esc>:Ttoggle<CR>')
+map('n', '<leader>x', ':TREPLSendLine<CR>')
+map('v', '<leader>x', ':TREPLSendSelection<CR>')
