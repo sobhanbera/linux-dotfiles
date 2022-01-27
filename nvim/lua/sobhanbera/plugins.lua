@@ -57,6 +57,7 @@ Plug 'tpope/vim-commentary'                                                     
 -- +-----------------------------------------------------+ "
 Plug 'morhetz/gruvbox'                                                          -- theme or colorscheme
 Plug 'ayu-theme/ayu-vim'                                                        -- ayu colorscheme
+Plug 'sts10/vim-pink-moon'
 
 -- +-----------------------------------------------------+ "
 -- |                   SYNTAX AND COLORS                 |
@@ -92,6 +93,7 @@ Plug 'jbyuki/nabla.nvim'                                                        
 -- |                    SNIPPETS & CODES                 |
 -- +-----------------------------------------------------+ "
 Plug 'sirver/ultisnips'                                                         -- snippets
+Plug 'mattn/emmet-vim'															-- emmplugins.luets plugin
 Plug 'quangnguyen30192/cmp-nvim-ultisnips'                                      -- required by nvim-cmp for completion
 Plug 'vimwiki/vimwiki'                                                          -- wikis
 
@@ -115,7 +117,6 @@ vim.call('plug#end')
 -- initializing...
 -- all the plugins config...
 require('plugins.bookmark')
-require('plugins.bufferline')
 require('plugins.bufferline')
 -- require('plugins.closetag')
 require('plugins.commentary')

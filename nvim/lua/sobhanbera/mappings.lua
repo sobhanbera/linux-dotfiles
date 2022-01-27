@@ -44,7 +44,9 @@ map('n', '<C-w>', ':bd')                                                        
 map('n', '<leader>T', ':tabprevious')                                           -- navigate to previous tab
 map('n', '<leader>t', ':tabnext')                                               -- navigate to next tab
 
--- map('n', '', '')
+map('n', '<C-s>', ':update<cr>')
+map('v', '<C-s>', '<c-c>:update<cr>')
+map('i', '<C-s>', '<esc>:update<cr>gi')
 
 -- Moving lines of text from one position to adjacent line position
 map('v', 'J', ":m '>+1<CR>gv=gv")                                               -- move line down
@@ -53,6 +55,10 @@ map('i', '<C-j>', '<esc>:m .+1m<CR>==a')                                        
 map('i', '<C-k>', '<esc>:m .-2m<CR>==a')                                        -- move line up
 map('n', 'J', ':m .+1<CR>==')                                                   -- move line down
 map('n', 'K', ':m .-2<CR>==')                                                   -- move line up
+
+-- re highlight lines when indenting them...
+map('v', '>', '>gv')															-- re-highlight when the lines are indented manually
+map('v', '<', '<gv')															-- same as the above one
 
 -- Undo breaks throughout any code characters
 map('i', '@', '@<c-g>u')                                                        -- undo breaks characters
@@ -66,7 +72,6 @@ map('i', ':', ':<c-g>u')                                                        
 -- -- mutation of Jumplist
 map('n', '<expr> k', "(v:count > 5 ? \"m'\" . v:count : \"\") . \'k\'")
 map('n', '<expr> j', "(v:count > 5 ? \"m'\" . v:count : \"\") . \'j\'")
-
 
 -- -- keeping the current line at center when searching
 map('n', 'n', 'nzzzv')                                                          -- searching helper
@@ -87,6 +92,23 @@ map('n', 'Y', '"+y$')                                                           
 map('n', 'p', '"+p')                                                            -- p will paste from the main system clipboard
 map('n', 'P', '"+P')                                                            -- same as above but with capital P or paste above the current line
 map('v', 'd', '"+x')                                                            -- d will cut the text to system clipboard
+map('n', 'dd', 'V"+x')															-- copy to the clipboard directly when cut
+
+-- word specific commands
+map('n', 'vv', 'viw')															-- select a word
+-- key bindings related to sandwich plugin and word specifics
+vim.cmd("let @1='viwsa('")                                                      -- surrounds the particular word (
+vim.cmd("let @2='viwsa['")                                                      -- surrounds the word with [
+vim.cmd("let @3='viwsa{'")                                                      -- surrounds the word with {
+vim.cmd('let @4="viwsa\'"')                                                     -- surrounds the word with '
+vim.cmd("let @5='viwsa\"'")                                                     -- surrounds the word with "
+
+-- cancel search or stop searching
+map('n', '<leader>i', '<Cmd>nohlsearch|diffupdate<CR>')
+
+-- silly
+map('n', '<leader>ts', ':Startify<CR>')                                         -- launch startify
+map('n', '<leader>q', ':q <CR>')                                                -- quiting vim
 
 -- +-----------------------------------------------------+
 -- |                        UTILITIES                    |
@@ -105,10 +127,8 @@ vim.cmd('autocmd filetype js,javascript nnoremap <F10> !node %')                
 
 -- to update the filetype from typescript to typescriptreact when opened a tsx file
 -- same goes for the javascript file like jsx and so on...
-vim.cmd('autocmd BufEnter *.tsx :set filetype=typescriptreact')
-vim.cmd('autocmd BufEnter *.jsx :set filetype=javascriptreact')
-
-map('n', '<leader>ts', ':Startify<CR>')                                         -- launch startify
-map('n', '<leader>q', ':q <CR>')                                                -- quiting vim
+-- currently after adding this two lines the code lags when changing the tabs
+-- vim.cmd('autocmd BufEnter *.tsx :set filetype=typescriptreact')
+-- vim.cmd('autocmd BufEnter *.jsx :set filetype=javascriptreact')
 
 return M
