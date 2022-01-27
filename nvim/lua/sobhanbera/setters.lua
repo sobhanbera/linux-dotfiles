@@ -46,22 +46,3 @@ vim.cmd('set noswapfile nobackup undofile')
 vim.cmd('set history=10000')
 vim.cmd('set backspace=indent,eol,start whichwrap+=<,>,[,]')
 vim.cmd('set completeopt-=preview')
-
--- +-----------------------------------------------------+
--- |                     COLORSCHEME                     |
--- +-----------------------------------------------------+
--- vim.cmd('let g:gruvbox_contrast_dark = "hard"')
-vim.cmd('set termguicolors')
-vim.cmd('let ayucolor="dark"')
-vim.cmd('colorscheme ayu')
-
-vim.cmd('hi Normal guibg=NONE')
-vim.cmd('hi CursorLine gui=NONE cterm=NONE')
-vim.cmd('hi ColorColumn ctermbg=0 guibg=#3C3835')
-vim.cmd('hi OverLength ctermbg=NONE ctermfg=NONE guibg=#000000 guifg=#ADFF2F')
-
-vim.cmd('hi DiagnosticError ctermbg=12 ctermfg=NONE guibg=NONE guifg=#F24B42')
-vim.cmd('hi DiagnosticWarn ctermbg=NONE ctermfg=NONE guibg=NONE guifg=#F5B439')
-vim.cmd('hi DiagnosticInfo ctermbg=NONE ctermfg=NONE guibg=NONE guifg=#AEFA47')
-vim.cmd('hi DiagnosticHint ctermbg=NONE ctermfg=NONE guibg=NONE guifg=#14BC85')
-

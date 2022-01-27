@@ -30,7 +30,6 @@ telescope.setup {
 }
 telescope.load_extension("fzy_native")
 
-vim.cmd('autocmd BufWritePre *.js,*.ts,*.tsx,*.jsx,*.html,*.css,*.scss,*.lua lua vim.lsp.buf.formatting()')      -- formmating a file when saved
 local map = require('sobhanbera.mappings').map
 map('n', '<leader>f', "<cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_ivy({ prompt_title = '< Find Git File >' }))<CR>")                -- git files
 map('n', '<leader>ff', "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy({ prompt_title = '< Search Files >' }))<cr>")               -- find any file
@@ -42,21 +41,3 @@ map('n', '<leader>/', "<cmd>lua require('telescope.builtin').current_buffer_fuzz
 map('n', '<leader>bf', "<cmd>lua require('telescope.builtin').buffers(require('telescope.themes').get_ivy({ prompt_title = '< Search Buffers >' }))<cr>")                -- find buffer
 map('n', '<leader>vim', "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy({ prompt_title = '< Vim Configs >', cwd = '~/.config/nvim', hidden = true, theme}))<CR>")       -- search files in vim config folder
 map('n', '<leader>co', "<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_ivy({ prompt_title = '< Find In Codes >', cwd = '~/Documents/Codes', hidden = true, theme}))<CR>")     -- search files in CP
-
--- highlights
-vim.cmd('highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080')
-vim.cmd('highlight! CmpItemAbbrMatch guibg=NONE guifg=#14BC85')
-vim.cmd('highlight! CmpItemAbbrMatchFuzzy guibg=NONE guifg=#14BC85')
-vim.cmd('highlight! CmpItemKindVariable guibg=NONE guifg=#9CDCFE')
-vim.cmd('highlight! CmpItemKindInterface guibg=NONE guifg=#9CDCFE')
-vim.cmd('highlight! CmpItemKindText guibg=NONE guifg=#9CDCFE')
-vim.cmd('highlight! CmpItemKindFunction guibg=NONE guifg=#C586C0')
-vim.cmd('highlight! CmpItemKindMethod guibg=NONE guifg=#C586C0')
-vim.cmd('highlight! CmpItemKindKeyword guibg=NONE guifg=#D4D4D4')
-vim.cmd('highlight! CmpItemKindProperty guibg=NONE guifg=#D4D4D4')
-vim.cmd('highlight! CmpItemKindUnit guibg=NONE guifg=#D4D4D4')
-
-vim.cmd('highlight! Pmenu guibg=#000000')
-vim.cmd('highlight! PmenuSel guibg=#000000 guifg=#14BC85')
-vim.cmd('highlight! PmenuSbar guibg=NONE')
-vim.cmd('highlight! PmenuThumb guibg=#14BC85')

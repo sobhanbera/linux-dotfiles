@@ -200,6 +200,8 @@ for _, lsp in ipairs(servers) do
         capabilities = capabilities,
     }
 end
+-- auto format files
+vim.cmd('autocmd BufWritePre *.js,*.ts,*.tsx,*.jsx,*.html,*.css,*.scss lua vim.lsp.buf.formatting()')      -- formmating a file when saved
 
 -- " +-----------------------------------------------------+ "
 -- " |            ATTACHING LUA LANG SERVER                |
