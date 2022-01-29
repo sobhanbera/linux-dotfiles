@@ -91,17 +91,20 @@ map('n', 'yy', '"+yy')                                                          
 map('n', 'Y', '"+y$')                                                           -- capital y copy till end of the line
 map('n', 'p', '"+p')                                                            -- p will paste from the main system clipboard
 map('n', 'P', '"+P')                                                            -- same as above but with capital P or paste above the current line
+map('v', 'p', '"+p')															-- same as above two ones
+map('v', 'P', '"+P')															-- same as above two ones
+map('n', 'D', 'v$d')															-- when D is pressed it will be cut till the end of line
 map('v', 'd', '"+x')                                                            -- d will cut the text to system clipboard
 map('n', 'dd', 'V"+x')															-- copy to the clipboard directly when cut
 
 -- word specific commands
 map('n', 'vv', 'viw')															-- select a word
 -- key bindings related to sandwich plugin and word specifics
-vim.cmd("let @1='viwsa('")                                                      -- surrounds the particular word (
-vim.cmd("let @2='viwsa['")                                                      -- surrounds the word with [
-vim.cmd("let @3='viwsa{'")                                                      -- surrounds the word with {
-vim.cmd('let @4="viwsa\'"')                                                     -- surrounds the word with '
-vim.cmd("let @5='viwsa\"'")                                                     -- surrounds the word with "
+vim.cmd("let @g='sa('")                                                      -- surrounds the particular word (
+vim.cmd("let @h='sa['")                                                      -- surrounds the word with [
+vim.cmd("let @j='sa{'")                                                      -- surrounds the word with {
+vim.cmd('let @k="sa\'"')                                                     -- surrounds the word with '
+vim.cmd("let @l='sa\"'")                                                     -- surrounds the word with "
 
 -- cancel search or stop searching
 map('n', '<leader>i', '<Cmd>nohlsearch|diffupdate<CR>')
