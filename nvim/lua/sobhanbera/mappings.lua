@@ -20,8 +20,8 @@ M.map = function(mode, left, right, options)
 end
 map = M.map
 
-map('n', '<leader>s', ':so ~/.config/nvim/init.vim<CR>')                        -- reload all vim configs...
-map('n', '<leader>e', ':e ~/.config/nvim/init.vim<CR>')                         -- edit vim config...
+map('n', '<leader>s', ':so ~/.config/nvim/init.lua<CR>')                        -- reload all vim configs...
+map('n', '<leader>e', ':e ~/.config/nvim/init.lua<CR>')                         -- edit vim config...
 
 map('n', '<leader>o', ':PlugInstall<CR>')                                       -- edit vim config...
 
@@ -99,12 +99,6 @@ map('n', 'dd', 'V"+x')															-- copy to the clipboard directly when cut
 
 -- word specific commands
 map('n', 'vv', 'viw')															-- select a word
--- key bindings related to sandwich plugin and word specifics
-vim.cmd("let @g='sa('")                                                      -- surrounds the particular word (
-vim.cmd("let @h='sa['")                                                      -- surrounds the word with [
-vim.cmd("let @j='sa{'")                                                      -- surrounds the word with {
-vim.cmd('let @k="sa\'"')                                                     -- surrounds the word with '
-vim.cmd("let @l='sa\"'")                                                     -- surrounds the word with "
 
 -- cancel search or stop searching
 map('n', '<leader>i', '<Cmd>nohlsearch|diffupdate<CR>')
@@ -124,7 +118,7 @@ vim.cmd('autocmd BufWritePre * :let _s=@/|:%s/\\s\\+$//e|:let @/=_s|')          
 vim.cmd('autocmd filetype java nnoremap <F9> :!javac %:r.java')                 -- compile java code
 vim.cmd('autocmd filetype java nnoremap <F10> :terminal java %:r')              -- execute java code
 vim.cmd('autocmd filetype cpp nnoremap <F9> :!g++ -std=c++14 -Wshadow -Wall -o %:r %:r.cpp -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG<CR>')    -- compile cpp code in vim
-vim.cmd('autocmd filetype cpp nnoremap <F10> :terminal ./%:r<CR>')              -- execute cpp code in terminal of vim
+vim.cmd('autocmd filetype cpp nnoremap <F10> :terminal ./%:r<cr>')              -- execute cpp code in terminal of vim
 vim.cmd('autocmd filetype py,python nnoremap <F10> :terminal python %')         -- run python code in terminal of vim
 vim.cmd('autocmd filetype js,javascript nnoremap <F10> !node %')                -- execute js/node file
 

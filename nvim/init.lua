@@ -4,7 +4,7 @@ local modules = {
     "sobhanbera.plugins",
     "sobhanbera.setters",
     "sobhanbera.ui",
-    "sobhanbera.prints"
+    -- "sobhanbera.prints"
 }
 
 for _, module in ipairs(modules) do

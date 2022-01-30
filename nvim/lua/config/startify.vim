@@ -24,3 +24,12 @@ let g:startify_lists = [
             \ { 'type': 'commands',                               'header': ['   Commands']              },
             \ ]
 " \ { 'type': function('s:getAllFilesFirstLevel'),      'header': ['   L-1...']     },
+
+let b:ale_fixers = ['prettier', 'eslint']
+" In ~/.vim/vimrc, or somewhere similar.
+let g:ale_fixers = {
+\   '*': ['remove_trailing_lines', 'trim_whitespace'],
+\   'javascript': ['eslint'],
+\}
+" Set this variable to 1 to fix files when you save them.
+let g:ale_fix_on_save = 1
