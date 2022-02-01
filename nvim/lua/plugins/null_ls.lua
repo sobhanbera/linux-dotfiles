@@ -15,8 +15,11 @@ null_ls.setup({
 			extra_args = { "--fast" },
 		}),
 		formatting.stylua,
+		-- formatting.uncrustify,
+		-- formatting.clang_format,
 	},
 })
 
 -- auto format files
-vim.cmd("autocmd BufWritePre *.js,*.ts,*.tsx,*.jsx,*.html,*.css,*.scss,*.py,*.lua lua vim.lsp.buf.formatting()") -- formmating a file when saved
+local filetypes = "*.js,*.ts,*.tsx,*.jsx,*.html,*.css,*.scss,*.py,*.lua"
+vim.cmd("autocmd BufWritePre " .. filetypes .. " lua vim.lsp.buf.formatting()") -- formmating a file when saved

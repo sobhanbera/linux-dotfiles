@@ -1,13 +1,36 @@
 -- +-----------------------------------------------------+
 -- |                    TELESCOPE CONFIG                 |
 -- +-----------------------------------------------------+
-local actions = require("telescope.actions")
 local telescope = require("telescope")
+local previewers = require("telescope.previewers")
+local actions = require("telescope.actions")
+local action_layout = require("telescope.actions.layout")
+
+-- limiting preview window on large files
+-- for now it is 50.00 KB
+local new_maker = function(filepath, bufnr, opts)
+	opts = opts or {}
+
+	filepath = vim.fn.expand(filepath)
+	vim.loop.fs_stat(filepath, function(_, stat)
+		if not stat then
+			return
+		end
+		if stat.size > 51200 then
+			return
+		else
+			previewers.buffer_previewer_maker(filepath, bufnr, opts)
+		end
+	end)
+end
+
 telescope.setup({
 	defaults = {
 		file_sorter = require("telescope.sorters").get_fzy_sorter,
 		prompt_prefix = "🔍 ",
 		color_devicons = true,
+		previewer = false,
+		buffer_previewer_maker = new_maker,
 
 		file_previewer = require("telescope.previewers").vim_buffer_cat.new,
 		grep_previewer = require("telescope.previewers").vim_buffer_vimgrep.new,
@@ -18,8 +41,12 @@ telescope.setup({
 			i = {
 				["<C-x>"] = false,
 				["<C-q>"] = actions.send_to_qflist,
+				["?"] = action_layout.toggle_preview,
 			},
 		},
+
+		-- ignore files
+		file_ignore_patterns = { "node_modules", "package-lock.json", "plugged" },
 	},
 	extensions = {
 		fzy_native = {
@@ -29,6 +56,7 @@ telescope.setup({
 	},
 })
 telescope.load_extension("fzy_native")
+-- action_layout.toggle_preview()
 
 local map = require("sobhanbera.mappings").map
 map(
@@ -39,7 +67,7 @@ map(
 map(
 	"n",
 	"<leader>ff",
-	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ prompt_title = '< Search Files >' }))<cr>"
+	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ prompt_title = '< Search Files >', file_ignore_patterns = { \"package-lock.json\" } }))<cr>"
 ) -- find any file
 map(
 	"n",
@@ -75,7 +103,7 @@ map(
 map(
 	"n",
 	"<leader>vim",
-	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ prompt_title = '< Vim Configs >', cwd = '~/.config/nvim', hidden = true, theme}))<CR>"
+	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ prompt_title = '< Vim Configs >', cwd = '~/.config/nvim', hidden = true, file_ignore_patterns = {\"plugged\"} }))<CR>"
 ) -- search files in vim config folder
 map(
 	"n",
