@@ -102,6 +102,13 @@ map(
 
 map(
 	"n",
+	"<leader>fa",
+	"<cmd>lua require('telescope.builtin').oldfiles(require('telescope.themes').get_dropdown({ prompt_title = '< Search From Last Opened Files >' }))<cr>"
+) -- find buffer
+
+
+map(
+	"n",
 	"<leader>vim",
 	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ prompt_title = '< Vim Configs >', cwd = '~/.config/nvim', hidden = true, file_ignore_patterns = {\"plugged\"} }))<CR>"
 ) -- search files in vim config folder
