@@ -21,5 +21,5 @@ null_ls.setup({
 })
 
 -- auto format files
-local filetypes = "*.js,*.ts,*.tsx,*.jsx,*.html,*.css,*.scss,*.py,*.lua"
+local filetypes = "*.js,*.ts,*.tsx,*.jsx,*.css,*.scss,*.py,*.lua"
 vim.cmd("autocmd BufWritePre " .. filetypes .. " lua vim.lsp.buf.formatting()") -- formmating a file when saved

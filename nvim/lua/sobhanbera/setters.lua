@@ -1,12 +1,12 @@
 -- +-----------------------------------------------------+
 -- |                        SETTERS                      |
 -- +-----------------------------------------------------+
-USER = vim.fn.expand('$USER')
+USER = vim.fn.expand("$USER")
 
 vim.o.exrc = true
 vim.o.encoding = "UTF-8"
 vim.o.mouse = "a"
-vim.o.guicursor=""
+vim.o.guicursor = ""
 vim.o.smarttab = true
 vim.o.undodir = "/home/" .. USER .. "/Documents/cache/nvim/undodir"
 vim.o.hidden = true
@@ -27,7 +27,7 @@ vim.o.softtabstop = 4
 
 vim.wo.relativenumber = true
 vim.wo.nu = true
-vim.wo.scrolloff = 4
+vim.wo.scrolloff = 0
 vim.wo.colorcolumn = "120"
 vim.wo.signcolumn = "yes"
 vim.wo.cursorline = true
@@ -41,8 +41,8 @@ vim.bo.autoindent = true
 vim.bo.smartindent = true
 vim.bo.textwidth = 120
 
-vim.cmd('set nowrap')
-vim.cmd('set noswapfile nobackup undofile')
-vim.cmd('set history=10000')
-vim.cmd('set backspace=indent,eol,start whichwrap+=<,>,[,]')
-vim.cmd('set completeopt-=preview')
+vim.cmd("set nowrap")
+vim.cmd("set noswapfile nobackup undofile")
+vim.cmd("set history=10000")
+vim.cmd("set backspace=indent,eol,start whichwrap+=<,>,[,]")
+vim.cmd("set completeopt-=preview")

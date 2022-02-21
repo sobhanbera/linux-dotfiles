@@ -53,7 +53,7 @@ Plug("iamcco/markdown-preview.nvim", { ["do"] = "cd app && yarn install" }) -- p
 Plug("terryma/vim-multiple-cursors") -- CTRL + N for multiple cursors
 Plug("szw/vim-maximizer") -- window maximizer
 Plug("preservim/tagbar") -- Tagbar for code navigation
-Plug("mhinz/vim-startify") -- vim start window UI provider
+Plug("glepnir/dashboard-nvim") -- vim start window UI provider
 Plug("tpope/vim-surround") -- Surrounding ysw)
 Plug("tpope/vim-commentary") -- vim comment link helper
 
@@ -114,6 +114,13 @@ Plug("vimwiki/vimwiki") -- wikis
 Plug("wakatime/vim-wakatime") -- wakatime a developer statistics provider
 
 -- +-----------------------------------------------------+ "
+-- |                 VISUAL ND GAMES					 |
+-- +-----------------------------------------------------+ "
+Plug("vim/killersheep")
+Plug("alec-gibson/nvim-tetris")
+Plug("high-moctane/gaming.vim")
+
+-- +-----------------------------------------------------+ "
 -- |                 EXTERNAL USE PLUGINS                |
 -- +-----------------------------------------------------+ "
 Plug("glacambre/firenvim", { ["do"] = vim.fn["firenvim#install(0)"] }) -- for browser nvim
@@ -125,6 +132,7 @@ local plugins_config_modules = {
 	"plugins.bufferline",
 	"plugins.commentary",
 	"plugins.COPILOT",
+	"plugins.dashboard",
 	"plugins.easymotion",
 	"plugins.fugitive",
 	"plugins.indent_blankline",
@@ -132,18 +140,18 @@ local plugins_config_modules = {
 	"plugins.lualine",
 	"plugins.maximizer",
 	"plugins.nabla",
-	"plugins.neoterm",
+	-- "plugins.neoterm",
 	"plugins.null_ls",
 	"plugins.nvim_tree",
-	"plugins.rainbow",
-	"plugins.ranger",
-	"plugins.tagbar",
+	-- "plugins.rainbow",
+	-- "plugins.ranger",
+	-- "plugins.tagbar",
 	"plugins.telescope",
 	"plugins.todo_comments",
 	"plugins.treesitter",
 	"plugins.trouble",
 	"plugins.ultisnips",
-	"plugins.vimspector",
+	-- "plugins.vimspector",
 }
 -- initializing all the plugins modules...
 for _, plugin_module in ipairs(plugins_config_modules) do
