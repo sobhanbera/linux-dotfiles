@@ -23,12 +23,13 @@ Plug("nvim-telescope/telescope-fzy-native.nvim")
 
 Plug("folke/trouble.nvim") -- to show diagnostics seperately
 
+Plug("jose-elias-alvarez/null-ls.nvim")
+
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" }) -- awesome syntax
 Plug("ray-x/lsp_signature.nvim") -- mainly for function signatures
 Plug("nvim-lualine/lualine.nvim") -- statusbar structure update ui
 Plug("akinsho/bufferline.nvim") -- ui
 Plug("onsails/lspkind-nvim") -- auto complete menu icons
-Plug("jose-elias-alvarez/null-ls.nvim") -- formatting files too good in it...
 Plug("dense-analysis/ale") -- not for formatting purpose which is this plugin made for but I use this plugin for declaration shower
 -- this plugin shows the description or type of any identifier in the state bar when hovered over any identifier or so
 -- so good plugin
@@ -140,18 +141,13 @@ local plugins_config_modules = {
 	"plugins.lualine",
 	"plugins.maximizer",
 	"plugins.nabla",
-	-- "plugins.neoterm",
 	"plugins.null_ls",
 	"plugins.nvim_tree",
-	-- "plugins.rainbow",
-	-- "plugins.ranger",
-	-- "plugins.tagbar",
 	"plugins.telescope",
 	"plugins.todo_comments",
 	"plugins.treesitter",
 	"plugins.trouble",
 	"plugins.ultisnips",
-	-- "plugins.vimspector",
 }
 -- initializing all the plugins modules...
 for _, plugin_module in ipairs(plugins_config_modules) do
