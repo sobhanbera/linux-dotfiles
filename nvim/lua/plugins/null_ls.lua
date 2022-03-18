@@ -24,5 +24,6 @@ null_ls.setup({
 local event = "BufWritePre"
 local filetypes = "*.js,*.ts,*.tsx,*.jsx,*.css,*.scss,*.py,*.lua"
 local formattingCommand = "lua vim.lsp.buf.formatting()"
+
 vim.cmd("autocmd " .. event .. " " .. filetypes .. " " .. formattingCommand) -- formmating a file when saved
-print("autocmd " .. event .. " " .. filetypes .. " " .. formattingCommand)
+-- print("autocmd " .. event .. " " .. filetypes .. " " .. formattingCommand)
