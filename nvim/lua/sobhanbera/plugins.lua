@@ -28,7 +28,7 @@ Plug("jose-elias-alvarez/null-ls.nvim")
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" }) -- awesome syntax
 Plug("ray-x/lsp_signature.nvim") -- mainly for function signatures
 Plug("nvim-lualine/lualine.nvim") -- statusbar structure update ui
-Plug("akinsho/bufferline.nvim") -- ui
+-- Plug("akinsho/bufferline.nvim") -- ui
 Plug("onsails/lspkind-nvim") -- auto complete menu icons
 Plug("dense-analysis/ale") -- not for formatting purpose which is this plugin made for but I use this plugin for declaration shower
 -- this plugin shows the description or type of any identifier in the state bar when hovered over any identifier or so
@@ -54,7 +54,7 @@ Plug("iamcco/markdown-preview.nvim", { ["do"] = "cd app && yarn install" }) -- p
 Plug("terryma/vim-multiple-cursors") -- CTRL + N for multiple cursors
 Plug("szw/vim-maximizer") -- window maximizer
 Plug("preservim/tagbar") -- Tagbar for code navigation
-Plug("glepnir/dashboard-nvim") -- vim start window UI provider
+-- Plug("glepnir/dashboard-nvim") -- vim start window UI provider
 Plug("tpope/vim-surround") -- Surrounding ysw)
 Plug("tpope/vim-commentary") -- vim comment link helper
 
@@ -125,15 +125,17 @@ Plug("high-moctane/gaming.vim")
 -- |                 EXTERNAL USE PLUGINS                |
 -- +-----------------------------------------------------+ "
 Plug("glacambre/firenvim", { ["do"] = vim.fn["firenvim#install(0)"] }) -- for browser nvim
+
+Plug("devinceble/Tortoise-Typing")
 vim.call("plug#end")
 
 -- all the plugins config...
 local plugins_config_modules = {
 	"plugins.bookmark",
-	"plugins.bufferline",
+	-- "plugins.bufferline",
 	"plugins.commentary",
 	"plugins.COPILOT",
-	"plugins.dashboard",
+	-- "plugins.dashboard",
 	"plugins.easymotion",
 	"plugins.fugitive",
 	"plugins.indent_blankline",
