@@ -6,6 +6,7 @@ vim.b.mapleader = " " -- leader key in buffer scope
 
 local M = {} -- the export variable
 vim.g.total_mappings = 0 -- tracking count of mappings
+vim.g.maps = 0
 
 -- main mapping function to create mapping in any mode...
 M.map = function(mode, left, right, options)
@@ -15,7 +16,9 @@ M.map = function(mode, left, right, options)
 	if options then
 		local_options = vim.tbl_extend("force", local_options, options)
 	end
+	-- both variables are equal just maps differ
 	vim.g.total_mappings = vim.g.total_mappings + 1
+	vim.g.maps = vim.g.maps + 1
 	return vim.api.nvim_set_keymap(mode, left, right, local_options)
 end
 map = M.map
@@ -29,10 +32,6 @@ map("n", "<leader>", ":WhichKey '<Space>'<CR>")
 
 map("n", "<leader>vs", ":vs<CR>") -- split window vertical
 map("n", "<leader>hs", ":split<CR>") -- split window horizontally
-
-map("n", "<leader>bN", ":bprevious<CR>") --  go to previous buffer
-map("n", "<leader>bn", ":bnext<CR>") --  goto next buffer
-map("n", "<leader>bd", ":bd<CR>") --  delete the currentl buffer
 
 map("n", "<F6>", ":terminal") -- open terminal in vim
 
@@ -80,7 +79,7 @@ map("n", "*", "*zzzv") -- searching helper
 map("n", "#", "#zzzv") -- searching helper
 
 -- -- sessions helper mappings
-map("n", "<leader>mks", ":mks! nvim-session.sobhanbera")
+-- map("n", "<leader>mks", ":mks! nvim-session.sobhanbera")
 
 -- -- mappings for copy and paste purpose...
 -- -- below are some of the developer specific shortcuts...
@@ -94,6 +93,10 @@ map("n", "P", '"+P') -- same as above but with capital P or paste above the curr
 map("v", "p", '"+p') -- same as above two ones
 map("v", "P", '"+P') -- same as above two ones
 map("v", "d", '"+x') -- d will cut the text to system clipboard
+map("n", "dd", 'V"+x') -- dd will cut the text to system clipboard
+map("n", "D", 'v$h"+x') -- D will cut till the end of the line
+-- here h is here because by deafult v$ also covers the end of the line character....
+-- so to remove it from the visual selection we need to use v$h
 
 -- word specific commands
 map("n", "vv", "viw") -- select a word
@@ -105,11 +108,17 @@ map("n", "<leader>i", "<Cmd>nohlsearch|diffupdate<CR>")
 map("n", "<leader>ts", ":Startify<CR>") -- launch startify
 map("n", "<leader>q", ":q <CR>") -- quiting vim
 
+-- Will not work or will collapse with bufferline.nvim
+-- Move to previous/next
+map("n", "<A-d>", ":bprevious<CR>")
+map("n", "<A-f>", ":bnext<CR>")
+map("n", "<leader>bd", ":bd<CR>") --  delete the currentl buffer
+
 -- +-----------------------------------------------------+
 -- |                        UTILITIES                    |
 -- +-----------------------------------------------------+
 -- For competitive programming...
-map("n", "<leader>lio", ":e in.txt <CR>:split out.txt<CR>")
+map("n", "<leader>vscp", ":e in.txt <CR>:split out.txt<CR>")
 map("n", "<leader>cp", ":cd ~/Documents/Codes<CR>")
 
 vim.cmd("autocmd BufWritePre * :let _s=@/|:%s/\\s\\+$//e|:let @/=_s|") -- terminate extra white space after line
