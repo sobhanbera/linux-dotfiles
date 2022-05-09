@@ -8,7 +8,7 @@ vim.cmd("colorscheme ayu")
 
 -- vim.cmd('hi Normal guibg=NONE')
 vim.cmd("hi CursorLine gui=NONE cterm=NONE")
-vim.cmd("hi ColorColumn ctermbg=0 guibg=#3C3835")
+vim.cmd("hi ColorColumn ctermbg=0 guibg=#2B3035")
 vim.cmd("hi OverLength ctermbg=NONE ctermfg=NONE guibg=#0F1419 guifg=#60A7BD")
 
 -- highlight related to "cmp" plugins
