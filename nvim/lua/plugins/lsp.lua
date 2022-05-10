@@ -74,7 +74,8 @@ end
 local lspkind = require("lspkind") -- lsp kind icons for completion menu
 lspkind.init({
 	with_text = true,
-	preset = "codicons",
+	mode = 'symbol_text', -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
+	preset = 'codicons',
 	symbol_map = {
 		Text = " ",
 		Method = " ",

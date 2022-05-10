@@ -29,7 +29,7 @@ Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" }) -- awesome syn
 Plug("ray-x/lsp_signature.nvim") -- mainly for function signatures
 Plug("nvim-lualine/lualine.nvim") -- statusbar structure update ui
 -- Plug("akinsho/bufferline.nvim") -- ui
-Plug("onsails/lspkind-nvim") -- auto complete menu icons
+Plug("onsails/lspkind.nvim") -- auto complete menu icons
 Plug("dense-analysis/ale") -- not for formatting purpose which is this plugin made for but I use this plugin for declaration shower
 -- this plugin shows the description or type of any identifier in the state bar when hovered over any identifier or so
 -- so good plugin
@@ -64,6 +64,7 @@ Plug("tpope/vim-commentary") -- vim comment link helper
 Plug("morhetz/gruvbox") -- theme or colorscheme
 Plug("ayu-theme/ayu-vim") -- ayu colorscheme
 Plug("sts10/vim-pink-moon")
+Plug("Rigellute/shades-of-purple.vim")
 
 -- +-----------------------------------------------------+ "
 -- |                   SYNTAX AND COLORS                 |
