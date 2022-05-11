@@ -1,45 +1,20 @@
-snippet cpp_template_by_sobhan_bera "This is the default c++ template created by Sobhan Bera on 03 Jan 2019..." w
+snippet cpp_template "This is the default c++ template created by Sobhan Bera on 03 Jan 2019..." w
 /*\
 |*| @coder     : sobhan-bera
-|*| @code_time : `!v strftime('%Y-%m-%d %H:%M')`
+|*| @code_time : `!v strftime('%Y-%m-%d %H:%M:%S')`
 |*| @github    : https://github.com/sobhanbera
 \*/
-
 #include <bits/stdc++.h>
 using namespace std;
 
-#define FOR(i, a, b) for(int i = a; i < b; ++i)
-#define REV(i, a, b) for(int i = a; i >= b; --i)
-#define FORL(i, a, b) for(long long i = a; i < b; ++i)
-#define REVL(i, a, b) for(long long i = a; i >= b; --i)
-#define ll long long
-const int MAX = 1e5;
-const int MOD = 1e9+7;
-
-void debug() { cerr << endl; }
-vector<string> vec_split(string s) {
-	s += ',';
-	vector<string> res;
-	while(!s.empty()) {
-		res.push_back(s.substr(0, s.find(',')));
-		s = s.substr(s.find(',') + 1);
-	}
-	return res;
-}
-void debug_out(vector<string> __attribute__ ((unused)) args, __attribute__ ((unused)) int ind, __attribute__ ((unused)) int line) { debug(); }
-template <typename A, typename... B> void debug_out(vector<string> args, int ind, int line, A a, B... b) {
-	if(ind > 0) cerr << ", ";
-	else cerr << "Line(" << line << ") :- ";
-	
-	stringstream ss; ss << a;
-	cerr << '\n' << '\t' << args[ind] << " = " << ss.str();
-	debug_out(args, ind + 1, line, b...);
-}
-
+#define FOR(i, a, b) for(int i = a; i <= b; ++i)
+#define REV(i, b, a) for(int i = b; i >= a; --i)
+#define FORL(i, a, b) for(long long i = a; i <= b; ++i)
+#define REVL(i, b, a) for(long long i = b; i >= a; --i)
 #ifndef ONLINE_JUDGE
-	#define dbg(...) debug_out(vec_split(#__VA_ARGS__), 0, __LINE__, __VA_ARGS__)
+#include "sb/local.h"
 #else
-	#define dbg(...) 42
+#define dbg(...) 1
 #endif
 
 void solution(int _time) {
@@ -49,20 +24,12 @@ void solution(int _time) {
 int main() {
 	ios::sync_with_stdio(false);
 	cin.tie(nullptr);
-
 	int t = 1;
-	${1:// }cin >> t;
-	for(int nr = 1; nr <= t; ++nr) {
-		//print("Case #", nr, ": ");
-		solution(nr);
+	$1/* cin >> t; */
+	for(int time = 1; time <= t; ++time) {
+		/* print("Case #", time, ": "); */
+		solution(time);
 	}
 	return 0;
-}
-
-endsnippet
-
-snippet binary_search_arr "binary search function" b
-int binarySearch(int arr*, int x) {
-
 }
 endsnippet
