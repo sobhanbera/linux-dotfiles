@@ -48,7 +48,6 @@ Plug("kyazdani42/nvim-web-devicons") -- required for tab plugin
 Plug("ryanoasis/vim-devicons") -- Developer Icons seperate
 Plug("lukas-reineke/indent-blankline.nvim") -- indentation for blank lines
 Plug("jiangmiao/auto-pairs") -- just want to do it manually
-Plug("francoiscabrol/ranger.vim") -- ranger file manager for vim
 Plug("folke/todo-comments.nvim") -- TODO highlighter
 Plug("iamcco/markdown-preview.nvim", { ["do"] = "cd app && yarn install" }) -- plugin to preview markdown code
 Plug("terryma/vim-multiple-cursors") -- CTRL + N for multiple cursors
@@ -63,15 +62,14 @@ Plug("tpope/vim-commentary") -- vim comment link helper
 -- +-----------------------------------------------------+ "
 Plug("morhetz/gruvbox") -- theme or colorscheme
 Plug("ayu-theme/ayu-vim") -- ayu colorscheme
-Plug("sts10/vim-pink-moon")
-Plug("Rigellute/shades-of-purple.vim")
+Plug("haishanh/night-owl.vim")
+Plug("cocopon/iceberg.vim")
 
 -- +-----------------------------------------------------+ "
 -- |                   SYNTAX AND COLORS                 |
 -- +-----------------------------------------------------+ "
 Plug("ap/vim-css-color") -- css colors more faster than the below plugin
 Plug("lilydjwg/colorizer") -- highlight where every color hash or code is found in the entire codebase or files
-Plug("peitalin/vim-jsx-typescript") -- jsx + ts
 Plug("itchyny/vim-cursorword") -- highlight all words that are matching the word at cursor
 
 -- +-----------------------------------------------------+ "
@@ -90,11 +88,8 @@ Plug("mattesgroeger/vim-bookmarks") -- vim bookmark plugin
 Plug("easymotion/vim-easymotion") -- n and N was not working add this or remove the easymotion.vim plugin file. actually this plugin contains a map with n/N remove them so that you could navigate easily
 Plug("psliwka/vim-smoothie") -- smooth vim movements
 Plug("farmergreg/vim-lastplace") -- vim lastplace help to directly edit the last position of any file
--- Plug 'alvan/vim-closetag'                                                       -- auto close tags like html
 Plug("machakann/vim-sandwich") -- surrounds text
 Plug("junegunn/goyo.vim") -- no distraction now..
-Plug("liuchengxu/vim-which-key") -- plugins key-mappings helper
-Plug("jbyuki/nabla.nvim") -- Math based plugin
 
 -- +-----------------------------------------------------+ "
 -- |                    SNIPPETS & CODES                 |
@@ -102,7 +97,6 @@ Plug("jbyuki/nabla.nvim") -- Math based plugin
 Plug("sirver/ultisnips") -- snippets
 Plug("mattn/emmet-vim") -- emmplugins.luets plugin
 Plug("quangnguyen30192/cmp-nvim-ultisnips") -- required by nvim-cmp for completion
-Plug("vimwiki/vimwiki") -- wikis
 
 -- +-----------------------------------------------------+ "
 -- |                 TESTING & DEBUGGING                 |
@@ -118,9 +112,7 @@ Plug("wakatime/vim-wakatime") -- wakatime a developer statistics provider
 -- +-----------------------------------------------------+ "
 -- |                 VISUAL ND GAMES					 |
 -- +-----------------------------------------------------+ "
-Plug("vim/killersheep")
 Plug("alec-gibson/nvim-tetris")
-Plug("high-moctane/gaming.vim")
 
 -- +-----------------------------------------------------+ "
 -- |                 EXTERNAL USE PLUGINS                |
@@ -133,17 +125,14 @@ vim.call("plug#end")
 -- all the plugins config...
 local plugins_config_modules = {
 	"plugins.bookmark",
-	-- "plugins.bufferline",
 	"plugins.commentary",
 	"plugins.COPILOT",
-	-- "plugins.dashboard",
 	"plugins.easymotion",
 	"plugins.fugitive",
 	"plugins.indent_blankline",
 	"plugins.lsp",
 	"plugins.lualine",
 	"plugins.maximizer",
-	"plugins.nabla",
 	"plugins.null_ls",
 	"plugins.nvim_tree",
 	"plugins.telescope",
