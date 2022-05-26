@@ -21,11 +21,11 @@ configuration {
 
 
 * {
-  bg: #1d20213F;
-  bg-alt: #353535;
+  bg: #0E1F273F;
+  bg-alt: #14BC85;
 
-  fg: #ebdbb2;
-  fg-alt: #83a598;
+  fg: #000000;
+  fg-alt: #14BC857f;
 
   background-color: @bg;
 
