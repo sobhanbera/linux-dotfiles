@@ -28,8 +28,6 @@ map("n", "<leader>e", ":e ~/.config/nvim/init.lua<CR>") -- edit vim config...
 
 map("n", "<leader>o", ":PlugInstall<CR>") -- edit vim config...
 
-map("n", "<leader>", ":WhichKey '<Space>'<CR>")
-
 map("n", "<leader>vs", ":vs<CR>") -- split window vertical
 map("n", "<leader>hs", ":split<CR>") -- split window horizontally
 
@@ -95,6 +93,7 @@ map("v", "P", '"+P') -- same as above two ones
 map("v", "d", '"+x') -- d will cut the text to system clipboard
 map("n", "dd", 'V"+x') -- dd will cut the text to system clipboard
 map("n", "D", 'v$h"+x') -- D will cut till the end of the line
+map("n", "gy", "ggVG\"+y'y")
 -- here h is here because by deafult v$ also covers the end of the line character....
 -- so to remove it from the visual selection we need to use v$h
 

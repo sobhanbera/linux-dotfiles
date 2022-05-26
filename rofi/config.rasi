@@ -1,0 +1,109 @@
+configuration {
+  display-run: "Run";
+  display-drun: "Programs";
+  display-window: "Windows";
+  display-ssh: "SSH";
+  display-combi: "Combi";
+  display-keys: "KeyBinds";
+  display-filebrowser: "Explorer";
+  display-windowcd: "WindowCD";
+
+  drun-display-format: "{icon} {name}";
+  font: "JetBrains Mono 10";
+  modi: "window,run,drun,keys,filebrowser,emoji";
+
+  show-icons: true;
+  icon-theme: "Papirus";
+}
+
+
+@theme "/dev/null"
+
+
+* {
+  bg: #1d20213F;
+  bg-alt: #353535;
+
+  fg: #ebdbb2;
+  fg-alt: #83a598;
+
+  background-color: @bg;
+
+  border: 0;
+  margin: 0;
+  padding: 0;
+  spacing: 0;
+}
+
+
+window {
+  width: 45%;
+  border-radius: 10;
+  background-color: @bg;
+}
+
+mainbox {
+  background-color: @bg;
+  children: [inputbar, listview, mode-switcher];
+}
+
+
+inputbar {
+  children: [prompt, entry];
+}
+prompt {
+  background-color: @bg-alt;
+  enabled: true;
+  padding: 12 0 0 12;
+  text-color: @fg;
+}
+entry {
+  background-color: @bg-alt;
+  padding: 12;
+  text-color: @fg;
+}
+fr {
+  text-color: @fg;
+}
+
+
+listview {
+  padding: 0;
+  margin: 0;
+  background-color: @bg;
+  columns: 1;
+  lines: 15;
+}
+element {
+  padding: 0;
+  margin: 0;
+  text-color: @fg-alt;
+}
+element selected {
+  text-color: @fg;
+  background-color: @bg-alt;
+}
+element-icon {
+  size: 25;
+  padding: 10 15;
+}
+element-text {
+  background-color: inherit;
+  text-color: inherit;
+  vertical-align: 0.5;
+}
+
+mode-switcher {
+  padding: 10;
+  margin: 0;
+  border: 0;
+  border-radius: 0;
+}
+button {
+  background-color: @bg;
+  text-color: @fg;
+}
+
+error-message {
+  text-color: #ef4040;
+}

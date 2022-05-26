@@ -74,8 +74,8 @@ end
 local lspkind = require("lspkind") -- lsp kind icons for completion menu
 lspkind.init({
 	with_text = true,
-	mode = 'symbol_text', -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
-	preset = 'codicons',
+	mode = "symbol_text", -- options: 'text', 'text_symbol', 'symbol_text', 'symbol'
+	preset = "codicons",
 	symbol_map = {
 		Text = " ",
 		Method = " ",
@@ -112,7 +112,7 @@ local cmp = require("cmp") -- completion plugin
 cmp.setup({
 	experimental = {
 		native_menu = false,
-		ghost_text = true,
+		-- ghost_text = true,
 	},
 	snippet = {
 		expand = function(args)
