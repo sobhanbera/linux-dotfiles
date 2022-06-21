@@ -133,7 +133,7 @@ vim.cmd("autocmd filetype js,javascript nnoremap <F10> !node %") -- execute js/n
 -- to update the filetype from typescript to typescriptreact when opened a tsx file
 -- same goes for the javascript file like jsx and so on...
 -- currently after adding this two lines the code lags when changing the tabs
--- vim.cmd('autocmd BufEnter *.tsx :set filetype=typescriptreact')
--- vim.cmd('autocmd BufEnter *.jsx :set filetype=javascriptreact')
+-- vim.cmd("autocmd BufEnter *.tsx :set filetype=typescriptreact")
+-- vim.cmd("autocmd BufEnter *.jsx :set filetype=javascriptreact")
 
 return M
