@@ -109,8 +109,8 @@ map("n", "<leader>q", ":q <CR>") -- quiting vim
 
 -- Will not work or will collapse with bufferline.nvim
 -- Move to previous/next
-map("n", "<A-d>", ":bprevious<CR>")
-map("n", "<A-f>", ":bnext<CR>")
+-- map("n", "<A-d>", ":bprevious<CR>")
+-- map("n", "<A-f>", ":bnext<CR>")
 map("n", "<leader>bd", ":bd<CR>") --  delete the currentl buffer
 
 -- +-----------------------------------------------------+

@@ -67,7 +67,7 @@ map(
 map(
 	"n",
 	"<leader>ff",
-	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ prompt_title = '< Search Files >', file_ignore_patterns = { \"package-lock.json\" } }))<cr>"
+	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ prompt_title = '< Search Files >' }))<cr>"
 ) -- find any file
 map(
 	"n",
@@ -105,7 +105,6 @@ map(
 	"<leader>fa",
 	"<cmd>lua require('telescope.builtin').oldfiles(require('telescope.themes').get_dropdown({ prompt_title = '< Search From Last Opened Files >' }))<cr>"
 ) -- find buffer
-
 
 map(
 	"n",
