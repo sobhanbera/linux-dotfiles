@@ -33,10 +33,10 @@ map("n", "<leader>hs", ":split<CR>") -- split window horizontally
 
 map("n", "<F6>", ":terminal") -- open terminal in vim
 
-map("n", "<C-t>", ":tabnew") -- create new tab
-map("n", "<C-t><C-k>", ":tabprevious") -- navigate to previous tab
-map("n", "<C-t><C-j>", ":tabnext") -- navigate to next tab
-map("n", "<C-w>", ":bd") -- delete the current buffer
+-- map("n", "<C-t>", ":tabnew") -- create new tab
+-- map("n", "<C-t><C-k>", ":tabprevious") -- navigate to previous tab
+-- map("n", "<C-t><C-j>", ":tabnext") -- navigate to next tab
+-- map("n", "<C-w>", ":bd") -- delete the current buffer
 
 map("n", "<leader>T", ":tabprevious") -- navigate to previous tab
 map("n", "<leader>t", ":tabnext") -- navigate to next tab

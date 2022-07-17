@@ -4,7 +4,6 @@
 local null_ls = require("null-ls")
 local formatting = null_ls.builtins.formatting
 
--- setting up null ls
 null_ls.setup({
 	debug = false,
 	sources = {
@@ -16,15 +15,16 @@ null_ls.setup({
 			extra_args = { "--fast" },
 		}),
 		formatting.stylua,
-		-- formatting.uncrustify,
-		-- formatting.clang_format,
 	},
 })
 
 -- auto format files
-local event = "BufWritePre"
-local filetypes = "*.js,*.ts,*.tsx,*.jsx,*.css,*.scss,*.py,*.lua"
-local formattingCommand = "lua vim.lsp.buf.formatting()"
+local event = "BufWritePost"
+local filetypes = "*.js,*.ts,*.tsx,*.jsx,*.css,*.scss,*.lua"
+local formattingCommand = "lua vim.lsp.buf.formatting_seq_sync()"
 
-vim.cmd("autocmd " .. event .. " " .. filetypes .. " " .. formattingCommand) -- formmating a file when saved
+local map = require("sobhanbera.mappings").map
+map("n", "<leader>df", ":lua vim.lsp.buf.formatting()<CR>")
+
+-- vim.cmd("autocmd " .. event .. " " .. filetypes .. " " .. formattingCommand) -- formmating a file when saved
 -- print("autocmd " .. event .. " " .. filetypes .. " " .. formattingCommand)
