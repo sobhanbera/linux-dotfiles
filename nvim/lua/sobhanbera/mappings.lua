@@ -33,10 +33,10 @@ map("n", "<leader>hs", ":split<CR>") -- split window horizontally
 
 map("n", "<F6>", ":terminal") -- open terminal in vim
 
-map("n", "<C-t>", ":tabnew") -- create new tab
-map("n", "<C-t><C-k>", ":tabprevious") -- navigate to previous tab
-map("n", "<C-t><C-j>", ":tabnext") -- navigate to next tab
-map("n", "<C-w>", ":bd") -- delete the current buffer
+-- map("n", "<C-t>", ":tabnew") -- create new tab
+-- map("n", "<C-t><C-k>", ":tabprevious") -- navigate to previous tab
+-- map("n", "<C-t><C-j>", ":tabnext") -- navigate to next tab
+-- map("n", "<C-w>", ":bd") -- delete the current buffer
 
 map("n", "<leader>T", ":tabprevious") -- navigate to previous tab
 map("n", "<leader>t", ":tabnext") -- navigate to next tab
@@ -88,9 +88,9 @@ map("n", "yy", '"+yy') -- yy should do the same trick as above
 map("n", "Y", '"+y$') -- capital y copy till end of the line
 map("n", "p", '"+p') -- p will paste from the main system clipboard
 map("n", "P", '"+P') -- same as above but with capital P or paste above the current line
-map("v", "p", '"+p') -- same as above two ones
-map("v", "P", '"+P') -- same as above two ones
-map("v", "d", '"+x') -- d will cut the text to system clipboard
+map("v", "p", '"+p') -- same as above two ones but in visual mode
+map("v", "P", '"+P') -- same as above two ones but in visual mode
+map("v", "d", '"+x') -- d will cut the text and saves to system clipboard
 map("n", "dd", 'V"+x') -- dd will cut the text to system clipboard
 map("n", "D", 'v$h"+x') -- D will cut till the end of the line
 map("n", "gy", "ggVG\"+y'y")
@@ -104,13 +104,21 @@ map("n", "vv", "viw") -- select a word
 map("n", "<leader>i", "<Cmd>nohlsearch|diffupdate<CR>")
 
 -- silly
-map("n", "<leader>ts", ":Startify<CR>") -- launch startify
 map("n", "<leader>q", ":q <CR>") -- quiting vim
 
 -- Will not work or will collapse with bufferline.nvim
 -- Move to previous/next
 map("n", "<A-d>", ":bprevious<CR>")
 map("n", "<A-f>", ":bnext<CR>")
+map("n", "<A-1>", ":b1<CR>") -- these are some commands which will move the current buffer to different files
+map("n", "<A-2>", ":b2<CR>")
+map("n", "<A-3>", ":b3<CR>")
+map("n", "<A-4>", ":b4<CR>")
+map("n", "<A-5>", ":b5<CR>")
+map("n", "<A-6>", ":b6<CR>")
+map("n", "<A-7>", ":b7<CR>")
+map("n", "<A-8>", ":b8<CR>")
+map("n", "<A-9>", ":b9<CR>")
 map("n", "<leader>bd", ":bd<CR>") --  delete the currentl buffer
 
 -- +-----------------------------------------------------+
@@ -133,7 +141,7 @@ vim.cmd("autocmd filetype js,javascript nnoremap <F10> !node %") -- execute js/n
 -- to update the filetype from typescript to typescriptreact when opened a tsx file
 -- same goes for the javascript file like jsx and so on...
 -- currently after adding this two lines the code lags when changing the tabs
--- vim.cmd('autocmd BufEnter *.tsx :set filetype=typescriptreact')
--- vim.cmd('autocmd BufEnter *.jsx :set filetype=javascriptreact')
+-- vim.cmd("autocmd BufEnter *.tsx :set filetype=typescriptreact")
+-- vim.cmd("autocmd BufEnter *.jsx :set filetype=javascriptreact")
 
 return M

@@ -53,3 +53,5 @@ vim.cmd("set completeopt-=preview")
 vim.cmd("augroup vimrc_autocmds")
 vim.cmd("autocmd BufEnter * match OverLength /\\%120v.*/")
 vim.cmd("augroup END")
+
+vim.g.nvim_tree_show_icons = '{ "git": 1, "folders": 1, "files": 1, "folder_arrows": 1 }'
