@@ -20,7 +20,6 @@ local on_attach = function(client, bufnr)
 		hint_enable = true,
 		hint_prefix = "🐼 ",
 		hint_scheme = "String",
-		use_lspsaga = true,
 		hi_parameter = "LspSignatureActiveParameter",
 		max_height = 12,
 		max_width = 120,
@@ -106,6 +105,33 @@ lspkind.init({
 })
 
 -- +-----------------------------------------------------+
+-- |                 INITIALIZING LUASNIPS               |
+-- +-----------------------------------------------------+
+-- require("luasnip.loaders.from_vscode").lazy_load({ include = { "javascript", "typescript", "typescriptreact", "javascriptreact" } })
+require("luasnip.loaders.from_vscode").lazy_load()
+local ls = require "luasnip"
+local types = require "luasnip.util.types"
+
+ls.config.set_config {
+  -- This tells LuaSnip to remember to keep around the last snippet. You can jump back into it even if you move outside of the selection
+  history = true,
+  -- This one is cool cause if you have dynamic snippets, it updates as you type!
+  updateevents = "TextChanged,TextChangedI",
+  enable_autosnippets = true,
+}
+-- mappings for jumping forward and backward
+vim.keymap.set({ "i", "s" }, "<c-k>", function()
+	if ls.expand_or_jumpable() then
+		ls.expand_or_jump()
+	end
+end, {silent = true})
+vim.keymap.set({ "i", "s" }, "<c-j>", function()
+	if ls.jumpable(-1) then
+		ls.jump(-1)
+	end
+end, {silent = true})
+
+-- +-----------------------------------------------------+
 -- |                  NVIM CMP CONFIGS                   |
 -- +-----------------------------------------------------+
 local cmp = require("cmp") -- completion plugin
@@ -116,15 +142,19 @@ cmp.setup({
 	},
 	snippet = {
 		expand = function(args)
-			vim.fn["UltiSnips#Anon"](args.body)
-		end,
+            local luasnip = prequire("luasnip")
+            if not luasnip then
+                return
+            end
+            luasnip.lsp_expand(args.body)
+        end,
 	},
 	sources = {
-		{ name = "nvim_lsp", keyword_length = 1 },
-		{ name = "nvim_lua", keyword_length = 1 },
-		{ name = "path", keyword_length = 1 },
-		{ name = "ultisnips", keyword_length = 1 },
-		{ name = "buffer", keyword_length = 1 },
+		{ name = 'nvim_lsp' },
+		{ name = 'luasnip' },
+		{ name = 'path' },
+		{ name = 'buffer' },
+		{ name = "nvim_lua" },
 	},
 	formatting = {
 		format = lspkind.cmp_format({
@@ -134,7 +164,7 @@ cmp.setup({
 				nvim_lsp = "[LSP]",
 				nvim_lua = "[API]",
 				path = "[PATH]",
-				ultisnips = "[SNIP]",
+				luasnip = "[SNIP]",
 			},
 		}),
 	},
@@ -146,7 +176,14 @@ cmp.setup({
 				behavior = cmp.ConfirmBehavior.Insert,
 				select = true,
 			}),
-			{ "i", "c" } -- will work both on command mode and insert mode
+			{ "i", "c" } -- enter-completion will work both on command mode and insert mode
+		),
+		["<Tab>"] = cmp.mapping(
+			cmp.mapping.confirm({
+				behavior = cmp.ConfirmBehavior.Insert,
+				select = true,
+			}),
+			{ "i", "c" } -- tab-completion will work both on command mode and insert mode
 		),
 		["<C-space>"] = cmp.mapping({
 			i = cmp.mapping.complete(),
@@ -160,6 +197,10 @@ cmp.setup({
 				end
 			end,
 		}),
+		['<C-b>'] = cmp.mapping.scroll_docs(-4),
+		['<C-f>'] = cmp.mapping.scroll_docs(4),
+		['<C-e>'] = cmp.mapping.abort(),
+		
 	},
 	sorting = {
 		comparators = {

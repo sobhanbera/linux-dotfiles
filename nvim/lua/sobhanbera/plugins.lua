@@ -7,23 +7,20 @@ vim.call("plug#begin", "~/.config/nvim/plugged")
 -- |           LSP PLUGINS & AUTOCOMPLETE                |
 -- +-----------------------------------------------------+ "
 Plug("neovim/nvim-lspconfig") -- NVIM LSP CONFIG
-Plug("glepnir/lspsaga.nvim") -- saga for lsp to show popup msgs
 
 Plug("hrsh7th/nvim-cmp") -- the exact completion plugin, since nvim-compe is deprecated
 Plug("hrsh7th/cmp-nvim-lsp") -- lsp completion
-Plug("hrsh7th/cmp-path") -- path completion
 Plug("hrsh7th/cmp-buffer") -- for buffer completion
-Plug("sirver/ultisnips") -- snippets
-Plug("quangnguyen30192/cmp-nvim-ultisnips") -- required by nvim-cmp for completion
+Plug("L3MON4D3/LuaSnip") -- snippets
+Plug("saadparwaiz1/cmp_luasnip")
+Plug("rafamadriz/friendly-snippets")
 
 Plug("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder
 
 Plug("jose-elias-alvarez/null-ls.nvim")
-Plug("airblade/vim-rooter")
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" }) -- awesome syntax
 Plug("ray-x/lsp_signature.nvim") -- mainly for function signatures
 Plug("nvim-lualine/lualine.nvim") -- statusbar structure update ui
-Plug("akinsho/bufferline.nvim") -- ui
 Plug("onsails/lspkind.nvim") -- auto complete menu icons
 Plug("dense-analysis/ale") -- not for formatting purpose which is this plugin made for but I use this plugin for declaration shower
 -- this plugin shows the description or type of any identifier in the state bar when hovered over any identifier or so
@@ -72,7 +69,6 @@ vim.call("plug#end")
 
 -- all the plugins config...
 local plugins_config_modules = {
-	"plugins.bufferline",
 	"plugins.commentary",
 	"plugins.easymotion",
 	"plugins.fugitive",

@@ -50,9 +50,10 @@ telescope.setup({
 	},
 })
 
+local map = require('sobhanbera.mappings').map
 map(
 	"n",
-	"<leader>f",
+	"<leader>fg",
 	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ prompt_title = '< Search Files >' }))<cr>"
 ) -- find any file
 map(
