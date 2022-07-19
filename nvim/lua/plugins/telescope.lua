@@ -53,12 +53,12 @@ telescope.setup({
 local map = require('sobhanbera.mappings').map
 map(
 	"n",
-	"<leader>fg",
+	"<leader>ff",
 	"<cmd>lua require('telescope.builtin').find_files(require('telescope.themes').get_dropdown({ prompt_title = '< Search Files >' }))<cr>"
 ) -- find any file
 map(
 	"n",
-	"<leader>ff",
+	"<leader>fj",
 	"<cmd>lua require('telescope.builtin').git_files(require('telescope.themes').get_dropdown({ prompt_title = '< Project Files >' }))<CR>"
 ) -- git files
 map(

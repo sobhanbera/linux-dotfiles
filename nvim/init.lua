@@ -1,18 +1,11 @@
-local modules = {
-	"sobhanbera.mappings",
-	"sobhanbera.utils",
-	"sobhanbera.plugins",
-	"sobhanbera.setters",
-	"sobhanbera.ui",
-	-- "sobhanbera.prints"
-}
-
-for _, module in ipairs(modules) do
-	local ok, error = require(module)
-	if not ok then
-		error("Error loading " .. module .. "\n\n" .. error)
-	end
-end
+require("sobhanbera.mappings")
+require("sobhanbera.utils")
+require("sobhanbera.plugins")
+require("sobhanbera.setters")
+require("sobhanbera.ui")
+-- require("sobhanbera.prints")
 
 USER = vim.fn.expand("$USER")
 vim.cmd("source " .. "/home/" .. USER .. "/.config/nvim/lua/config/markdown_preview.vim")
+vim.cmd("source " .. "/home/" .. USER .. "/.config/nvim/lua/plugins/lastplace.vim")
+vim.cmd("source " .. "/home/" .. USER .. "/.config/nvim/lua/plugins/maximizer.vim")
