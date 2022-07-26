@@ -11,6 +11,7 @@ Plug("neovim/nvim-lspconfig") -- NVIM LSP CONFIG
 Plug("hrsh7th/nvim-cmp") -- the exact completion plugin, since nvim-compe is deprecated
 Plug("hrsh7th/cmp-nvim-lsp") -- lsp completion
 Plug("hrsh7th/cmp-buffer") -- for buffer completion
+Plug("hrsh7th/cmp-path") -- for path completion
 Plug("L3MON4D3/LuaSnip") -- snippets
 Plug("saadparwaiz1/cmp_luasnip")
 Plug("rafamadriz/friendly-snippets")
@@ -19,6 +20,7 @@ Plug("nvim-telescope/telescope.nvim") -- highly extendable fuzzy finder
 
 Plug("jose-elias-alvarez/null-ls.nvim")
 Plug("nvim-treesitter/nvim-treesitter", { ["do"] = ":TSUpdate" }) -- awesome syntax
+Plug("JoosepAlviste/nvim-ts-context-commentstring")
 Plug("ray-x/lsp_signature.nvim") -- mainly for function signatures
 Plug("nvim-lualine/lualine.nvim") -- statusbar structure update ui
 Plug("onsails/lspkind.nvim") -- auto complete menu icons
@@ -38,7 +40,6 @@ Plug("airblade/vim-gitgutter") -- shows gutters for git
 -- +-----------------------------------------------------+ "
 Plug("ayu-theme/ayu-vim") -- ayu colorscheme
 Plug("lilydjwg/colorizer") -- highlight where every color hash or code is found in the entire codebase or files
-Plug("sainnhe/sonokai")
 
 -- +-----------------------------------------------------+ "
 -- |                UI & UTILS COMPONENTS                |
@@ -57,14 +58,3 @@ Plug("easymotion/vim-easymotion") -- n and N was not working add this or remove 
 Plug("psliwka/vim-smoothie") -- smooth vim movements
 Plug("wakatime/vim-wakatime") -- wakatime a developer statistics provider
 vim.call("plug#end")
-
--- all the plugins config...
-require("plugins.easymotion")
-require("plugins.fugitive")
-require("plugins.indent_blankline")
-require("plugins.lsp")
-require("plugins.lualine")
-require("plugins.null_ls")
-require("plugins.nvim_tree")
-require("plugins.telescope")
-require("plugins.treesitter")

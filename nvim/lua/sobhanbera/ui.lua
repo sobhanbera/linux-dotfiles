@@ -7,9 +7,10 @@ vim.cmd('let ayucolor="mirage"')
 vim.cmd("colorscheme ayu")
 
 -- vim.cmd('hi Normal guibg=#043142')
-vim.cmd("hi CursorLine gui=NONE cterm=NONE")
+vim.cmd("hi CursorLine gui=NONE cterm=NONE guibg=#2B313F")
 vim.cmd("hi ColorColumn ctermbg=0 guibg=#2B313F")
 vim.cmd("hi OverLength ctermbg=NONE ctermfg=NONE guibg=#043142 guifg=#FDAB43")
+vim.cmd("hi WinSeparator guibg=None")
 
 -- highlight related to "cmp" plugins
 vim.cmd("highlight! CmpItemAbbrDeprecated guibg=NONE gui=strikethrough guifg=#808080")
