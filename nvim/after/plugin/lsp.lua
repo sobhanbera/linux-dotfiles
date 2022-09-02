@@ -37,9 +37,13 @@ local on_attach = function(client, bufnr)
 		timer_interval = 200,
 		toggle_key = "<C-Space>",
 	}
-	local lsp_signature = require("lsp_signature")
-	lsp_signature.setup(cfg)
-	lsp_signature.on_attach(cfg, bufnr)
+
+	-- the signatures will not show for cpp, c, etc.
+	if client.name ~= 'clangd' then
+		local lsp_signature = require("lsp_signature")
+		lsp_signature.setup(cfg)
+		lsp_signature.on_attach(cfg, bufnr)
+	end
 
 	local function buf_set_keymap(...)
 		vim.api.nvim_buf_set_keymap(bufnr, ...)
@@ -80,28 +84,27 @@ lspkind.init({
 -- |                 INITIALIZING LUASNIPS               |
 -- +-----------------------------------------------------+
 -- require("luasnip.loaders.from_vscode").lazy_load({ include = { "javascript", "typescript", "typescriptreact", "javascriptreact" } })
-local luasnip = require "luasnip"
-local types = require "luasnip.util.types"
+local luasnip = require("luasnip")
 require("luasnip.loaders.from_vscode").lazy_load()
 
-luasnip.config.set_config {
-  -- This tells LuaSnip to remember to keep around the last snippet. You can jump back into it even if you move outside of the selection
-  history = true,
-  -- This one is cool cause if you have dynamic snippets, it updates as you type!
-  updateevents = "TextChanged,TextChangedI",
-  enable_autosnippets = true,
-}
+luasnip.config.set_config({
+	-- This tells LuaSnip to remember to keep around the last snippet. You can jump back into it even if you move outside of the selection
+	history = true,
+	-- This one is cool cause if you have dynamic snippets, it updates as you type!
+	updateevents = "TextChanged,TextChangedI",
+	enable_autosnippets = true,
+})
 -- mappings for jumping forward and backward
 vim.keymap.set({ "i", "s" }, "<c-k>", function()
 	if luasnip.expand_or_jumpable() then
 		luasnip.expand_or_jump()
 	end
-end, {silent = true})
+end, { silent = true })
 vim.keymap.set({ "i", "s" }, "<c-j>", function()
 	if luasnip.jumpable(-1) then
 		luasnip.jump(-1)
 	end
-end, {silent = true})
+end, { silent = true })
 
 -- +-----------------------------------------------------+
 -- |                  NVIM CMP CONFIGS                   |
@@ -114,23 +117,23 @@ cmp.setup({
 	},
 	snippet = {
 		expand = function(args)
-            if not luasnip then
-                return
-            end
-            luasnip.lsp_expand(args.body)
-        end,
+			if not luasnip then
+				return
+			end
+			luasnip.lsp_expand(args.body)
+		end,
 	},
 	sources = {
-		{ name = 'nvim_lsp' },
-		{ name = 'luasnip' },
-		{ name = 'path' },
-		{ name = 'buffer' },
-		{ name = 'nvim_lua' },
+		{ name = "nvim_lsp" },
+		{ name = "luasnip" },
+		{ name = "path" },
+		{ name = "buffer" },
+		{ name = "nvim_lua" },
 	},
 	formatting = {
 		format = lspkind.cmp_format({
 			with_text = false,
-			maxwidth= 45,
+			maxwidth = 45,
 			menu = {
 				buffer = "[BUF]",
 				nvim_lsp = "[LSP]",
@@ -162,10 +165,10 @@ cmp.setup({
 				end
 			end,
 		}),
-		['<C-b>'] = cmp.mapping.scroll_docs(-4),
-		['<C-f>'] = cmp.mapping.scroll_docs(4),
-		['<C-e>'] = cmp.mapping.close(),
-		['ESC'] = cmp.mapping.close(),
+		["<C-b>"] = cmp.mapping.scroll_docs(-4),
+		["<C-f>"] = cmp.mapping.scroll_docs(4),
+		["<C-e>"] = cmp.mapping.close(),
+		["ESC"] = cmp.mapping.close(),
 	},
 	sorting = {
 		comparators = {
@@ -214,6 +217,7 @@ local servers = {
 	"dockerls",
 	"jsonls",
 	"emmet_ls",
+	"clangd"
 } --, 'cssmodules_ls'}
 local capabilities = require("cmp_nvim_lsp").update_capabilities(vim.lsp.protocol.make_client_capabilities())
 
@@ -265,5 +269,4 @@ require("lspconfig").sumneko_lua.setup({
 vim.g.completion_matching_strategy_list = "['exact', 'substring', 'fuzzy']"
 
 -- extra plugins are being initialized here...
-require('Comment').setup()
-
+require("Comment").setup()

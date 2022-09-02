@@ -57,4 +57,5 @@ Plug("numToStr/Comment.nvim") -- vim comment link helper
 Plug("easymotion/vim-easymotion") -- n and N was not working add this or remove the easymotion.vim plugin file. actually this plugin contains a map with n/N remove them so that you could navigate easily
 Plug("psliwka/vim-smoothie") -- smooth vim movements
 Plug("wakatime/vim-wakatime") -- wakatime a developer statistics provider
+Plug("lewis6991/impatient.nvim") -- boosts up lua scripts
 vim.call("plug#end")
