@@ -94,6 +94,7 @@ map("v", "d", '"+x') -- d will cut the text and saves to system clipboard
 map("n", "dd", 'V"+x') -- dd will cut the text to system clipboard
 map("n", "D", 'v$h"+x') -- D will cut till the end of the line
 map("n", "gy", "ggVG\"+y'y")
+map("n", "YY", 'ggVG"+yg;')
 -- here h is here because by deafult v$ also covers the end of the line character....
 -- so to remove it from the visual selection we need to use v$h
 
@@ -121,6 +122,12 @@ map("n", "<A-8>", ":b8<CR>")
 map("n", "<A-9>", ":b9<CR>")
 map("n", "<leader>bd", ":bd<CR>") --  delete the currentl buffer
 
+-- navigation mappings like tmux <C-hjkl> to <C-w>hjkl
+map("n", "<c-h>", "<c-w>h")
+map("n", "<c-j>", "<c-w>j")
+map("n", "<c-k>", "<c-w>k")
+map("n", "<c-l>", "<c-w>l")
+
 -- +-----------------------------------------------------+
 -- |                        UTILITIES                    |
 -- +-----------------------------------------------------+
@@ -134,7 +141,10 @@ vim.cmd("autocmd filetype java nnoremap <F10> :terminal java %:r") -- execute ja
 vim.cmd(
 	"autocmd filetype cpp nnoremap <F9> :!g++ -std=c++14 -Wshadow -Wall -o %:r %:r.cpp -g -fsanitize=address -fsanitize=undefined -D_GLIBCXX_DEBUG<CR>"
 ) -- compile cpp code in vim
-vim.cmd("autocmd filetype cpp nnoremap <F10> :terminal ./%:r<cr>") -- execute cpp code in terminal of vim
+-- a insertion is provided so that no need to press it manually...
+vim.cmd("autocmd filetype cpp nnoremap <F10> :terminal ./%:r<cr>a") -- execute cpp code in terminal of vim
+-- a insertion is provided so that no need to press it manually...
+vim.cmd('autocmd filetype cpp nnoremap <F11> :terminal ./%:r<cr>"+pa<cr>') -- execute cpp code in terminal of vim after pasting copied text from clipboard which might be input
 vim.cmd("autocmd filetype py,python nnoremap <F10> :terminal python %") -- run python code in terminal of vim
 vim.cmd("autocmd filetype js,javascript nnoremap <F10> !node %") -- execute js/node file
 
@@ -143,5 +153,9 @@ vim.cmd("autocmd filetype js,javascript nnoremap <F10> !node %") -- execute js/n
 -- currently after adding this two lines the code lags when changing the tabs
 -- vim.cmd("autocmd BufEnter *.tsx :set filetype=typescriptreact")
 -- vim.cmd("autocmd BufEnter *.jsx :set filetype=javascriptreact")
+
+-- mappings which are in vim format
+USER = vim.fn.expand("$USER")
+vim.cmd("source " .. "/home/" .. USER .. "/.config/nvim/lua/sobhanbera/mappings.vim")
 
 return M
